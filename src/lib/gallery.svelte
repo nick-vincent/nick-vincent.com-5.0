@@ -1,6 +1,6 @@
 <script>
-	// import Thumbnail from '$lib/Thumbnail.svelte';
-	// import ThumbnailLoader from '$lib/ThumbnailLoader.svelte';
+	import Thumbnail from '$lib/thumbnail.svelte';
+	import Loader from '$lib/loader.svelte';
 
 	export let images = [];
 </script>
@@ -8,10 +8,9 @@
 <ul>
 	{#each images as image}
 		<li>
-			{image.title}
-			<!-- <ThumbnailLoader>
+			<Loader>
 				<Thumbnail {image} />
-			</ThumbnailLoader> -->
+			</Loader>
 		</li>
 	{/each}
 </ul>
@@ -23,6 +22,7 @@
 		gap: 1rem;
 		margin: 0;
 		padding: 0;
+		list-style: none;
 	}
 
 	li {
