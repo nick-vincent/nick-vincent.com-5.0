@@ -6,6 +6,6 @@
 </script>
 
 <h1>Photos</h1>
-<p>Photography from various locales around the world.</p>
+<p>Photography from around the world.</p>
 
 <Gallery {images} />
