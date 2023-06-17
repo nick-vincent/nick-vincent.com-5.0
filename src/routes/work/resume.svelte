@@ -5,7 +5,7 @@
 			Fluent in both design & code<br />
 			Prefers work to speak for itself
 		</p>
-		<p>
+		<p id="contact">
 			<a href="/">nick-vincent.com</a><br />
 			<a href="mailto:the.nick.vincent@gmail.com">the.nick.vincent@gmail.com</a>
 		</p>
@@ -180,9 +180,16 @@
 		margin: 2em 0;
 		background-color: white;
 		font-size: calc(16rem / 24);
-		letter-spacing: normal;
 		line-height: 1.5;
-		box-shadow: rgba(0, 0, 0, 0.05) 0 0.25em 2em;
+		letter-spacing: normal;
+		text-align: left;
+		box-shadow: var(--image-shadow);
+	}
+
+	article *,
+	article *::before,
+	article *::after {
+		color: black;
 	}
 
 	header {
@@ -220,6 +227,10 @@
 		padding: 0;
 	}
 
+	#contact {
+		text-align: right;
+	}
+
 	h1 {
 		margin: 0;
 		padding: 0;
@@ -241,7 +252,6 @@
 	}
 
 	a {
-		color: black;
 		font-weight: 600;
 		text-decoration: none;
 	}

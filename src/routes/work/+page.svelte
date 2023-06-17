@@ -2,6 +2,7 @@
 	import Resume from './resume.svelte';
 </script>
 
-<h1>Resume</h1>
+<h1>Work</h1>
+<p>Professional resume.</p>
 
 <Resume />
