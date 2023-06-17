@@ -178,7 +178,7 @@
 		gap: 2em;
 		padding: 4em 3em;
 		margin: 2em 0;
-		background-color: white;
+		background-color: #f0f0f0;
 		font-size: calc(16rem / 24);
 		line-height: 1.5;
 		letter-spacing: normal;
@@ -189,7 +189,7 @@
 	article *,
 	article *::before,
 	article *::after {
-		color: black;
+		color: #333;
 	}
 
 	header {
@@ -245,8 +245,8 @@
 		font-size: calc(14em / 16);
 		font-weight: 600;
 		line-height: 1;
-		border-top: 1px solid black;
-		border-bottom: 1px solid black;
+		border-top: 1px solid #333;
+		border-bottom: 1px solid #333;
 		padding: 0.5rem;
 		margin: 0 0 1rem;
 	}
