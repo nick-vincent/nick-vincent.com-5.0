@@ -12,7 +12,11 @@
 </main>
 
 <footer>
-	<p>Made with SvelteKit</p>
+	<p>
+		Made with ❤️ with <a href="https://svelte.dev" rel="external noreferrer" target="_blank"
+			>Svelte</a
+		>
+	</p>
 </footer>
 
 <style>
