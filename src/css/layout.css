@@ -11,6 +11,17 @@ html {
 	background-color: #e0e0e0;
 }
 
+html::after {
+	content: '';
+	display: block;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: -2;
+}
+
 body {
 	display: flex;
 	flex-direction: column;
@@ -19,4 +30,16 @@ body {
 	max-width: 40rem;
 	margin: 0 auto;
 	padding: 1rem;
+}
+
+body::before,
+body::after {
+	content: '';
+	display: block;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: -1;
 }
