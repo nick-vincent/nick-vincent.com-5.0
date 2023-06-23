@@ -1,6 +1,12 @@
 <script>
 	import Nav from './nav.svelte';
+	import Transition from '$lib/transition.svelte';
 	import '../app.css';
+
+	export let data;
+
+	$: pathParts = data.pathname.split('/');
+	$: dir = `/${pathParts[1]}`;
 </script>
 
 <header>
@@ -8,7 +14,9 @@
 </header>
 
 <main>
-	<slot />
+	<Transition pathname={dir}>
+		<slot />
+	</Transition>
 </main>
 
 <footer>
