@@ -1,19 +1,17 @@
 <script>
-	import { page } from '$app/stores';
+	import { fly } from 'svelte/transition';
+
 	import Lightbox from '$lib/lightbox.svelte';
-	import { getImageData } from '$lib/data';
 
-	const images = getImageData(
-		'faces',
-		'png',
-		(t) => `${t}.`,
-		(c) => `“${c}”`
-	);
+	export let data;
 
-	const image = images.find((i) => i.slug === $page.params.slug);
-	const index = images.indexOf(image);
-	const prevImage = images[index - 1] || images[images.length - 1];
-	const nextImage = images[index + 1] || images[0];
+	$: image = data.image;
+	$: prevImage = data.prevImage;
+	$: nextImage = data.nextImage;
 </script>
 
-<Lightbox {image} {prevImage} {nextImage} backUrl="/faces/" feedUrl="/faces/feed" />
+{#key image}
+	<!-- <div in:fly={{ duration: 300, delay: 400, x: 200 }} out:fly={{ duration: 300, x: -200 }}> -->
+	<Lightbox {image} {prevImage} {nextImage} backUrl="/faces/" feedUrl="/faces/feed" />
+	<!-- </div> -->
+{/key}

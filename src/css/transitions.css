@@ -15,4 +15,5 @@
 *::after,
 *::before {
 	transition: var(--transition-dom-x-ray);
+	scroll-behavior: smooth;
 }

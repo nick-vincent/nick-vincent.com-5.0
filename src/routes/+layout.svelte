@@ -1,5 +1,5 @@
 <script>
-	import Nav from './nav.svelte';
+	import Header from './header.svelte';
 	import Transition from '$lib/transition.svelte';
 	import '../app.css';
 
@@ -9,9 +9,7 @@
 	$: dir = `/${pathParts[1]}`;
 </script>
 
-<header>
-	<Nav />
-</header>
+<Header />
 
 <main>
 	<Transition pathname={dir}>
@@ -28,19 +26,14 @@
 </footer>
 
 <style>
-	header {
-		padding: 0 0 1rem 0;
-		border-bottom: 0.05rem solid var(--color-line);
-	}
-
 	main {
 		flex: 1;
-		padding: 4rem 0;
+		padding: 6rem 0 4rem;
 		text-align: center;
 	}
 
 	footer {
-		padding: 1rem 0 0 0;
+		padding: 1rem 0 1rem 0;
 		text-align: center;
 		font-size: 0.75rem;
 		border-top: 0.05rem solid var(--color-line);

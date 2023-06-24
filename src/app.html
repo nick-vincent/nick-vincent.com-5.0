@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -10,6 +10,13 @@
 			href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
 			rel="stylesheet"
 		/>
+		<script>
+			document.documentElement.classList.remove('no-js');
+			const prefers = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+			const stored = localStorage.getItem('theme');
+			const theme = stored || prefers;
+			document.documentElement.classList.add(theme);
+		</script>
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover">

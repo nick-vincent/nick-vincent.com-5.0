@@ -16,8 +16,8 @@
 	--light-image-filter: saturate(100%);
 	--light-body-gradient: radial-gradient(
 		circle at center top,
-		rgba(255, 255, 255, 0.9),
-		rgba(255, 255, 255, 0)
+		rgba(255, 255, 255, 0.9) 0,
+		rgba(255, 255, 255, 0) 100vh
 	);
 
 	/* dark mode vars */
@@ -45,8 +45,8 @@
 	--html-gradient: linear-gradient(
 		to bottom,
 		rgb(91, 107, 196) 0%,
-		rgb(176, 167, 202) 50%,
-		rgb(186, 150, 152) 100%
+		rgb(176, 167, 202) 50vh,
+		rgb(186, 150, 152) 100vh
 	);
 	--html-gradient-opacity: var(--light-html-gradient-opacity);
 	--color-background: var(--light-color-background);
@@ -71,7 +71,7 @@
 	--image-shadow-focus: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.25);
 }
 
-/* @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
 	:root {
 		--html-gradient-opacity: var(--dark-html-gradient-opacity);
 		--color-background: var(--dark-color-background);
@@ -90,7 +90,7 @@
 		--light-body-gradient-opacity: 0;
 		--dark-body-gradient-opacity: 1;
 	}
-} */
+}
 
 @media print {
 	:root {

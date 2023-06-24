@@ -14,9 +14,3 @@
 		<slot />
 	</div>
 {/key}
-
-<style>
-	.transition {
-		will-change: opacity, transform;
-	}
-</style>

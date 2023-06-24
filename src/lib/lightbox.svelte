@@ -13,8 +13,14 @@
 	export let backUrl;
 	// export let feedUrl;
 
-	const { id, title, date, caption, imageData } = image;
-	const { src, aspect } = imageData; // width & height are not working :(
+	$: id = image.id;
+	$: title = image.title;
+	$: date = image.date;
+	$: caption = image.caption;
+	$: imageData = image.imageData;
+	$: src = imageData.src;
+	$: aspect = imageData.aspect;
+
 	const { observer } = createObserver();
 
 	let img;
@@ -162,13 +168,13 @@
 	.right {
 		order: 2;
 		width: 100%;
-		max-width: 15rem;
+		max-width: 14rem;
 	}
 	.landscape .left {
 		width: 38rem;
 	}
 	.portrait .left {
-		width: 22rem;
+		width: 23rem;
 	}
 
 	ul {

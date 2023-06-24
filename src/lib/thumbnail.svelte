@@ -17,8 +17,8 @@
 	$: rotateX = mouseY ? `${(mouseY / img.clientHeight) * 2 * 10}deg` : '0deg';
 
 	onMount(() => {
-		img.removeAttribute('src');
-		img.removeAttribute('loading');
+		// img.removeAttribute('src');
+		// img.removeAttribute('loading');
 	});
 
 	function onLoad() {
@@ -145,7 +145,7 @@
 		border-radius: 0.5rem;
 		will-change: opacity;
 		opacity: 0;
-		transition: var(--transition-dom-x-ray), opacity 500ms ease-in-out;
+		transition: var(--transition-dom-x-ray), opacity 250ms ease-in-out;
 	}
 	a.loaded img,
 	:global(html.no-js) img {
