@@ -178,7 +178,7 @@
 		gap: 2em;
 		padding: 4em 3em;
 		margin: 2em 0;
-		background-color: #f0f0f0;
+		background-color: var(--color-resume-background);
 		font-size: calc(16rem / 24);
 		line-height: 1.5;
 		letter-spacing: normal;
@@ -189,7 +189,7 @@
 	article *,
 	article *::before,
 	article *::after {
-		color: #333;
+		color: var(--color-resume-text);
 	}
 
 	header {
@@ -245,8 +245,8 @@
 		font-size: calc(14em / 16);
 		font-weight: 600;
 		line-height: 1;
-		border-top: 1px solid #333;
-		border-bottom: 1px solid #333;
+		border-top: 0.05em solid var(--color-resume-text);
+		border-bottom: 0.05em solid var(--color-resume-text);
 		padding: 0.5rem;
 		margin: 0 0 1rem;
 	}
@@ -286,5 +286,27 @@
 	}
 	ul.bullet li {
 		padding-bottom: 1em;
+	}
+
+	@media (max-width: 959px) {
+		article {
+			font-size: 16px;
+			padding: 2.5rem 1.5rem;
+			max-width: calc(100vw - 2rem);
+			margin: 0 auto;
+		}
+
+		header,
+		main,
+		#col-1,
+		#col-2,
+		#col-2-1,
+		#col-2-2 {
+			display: block;
+		}
+
+		#contact {
+			text-align: left;
+		}
 	}
 </style>

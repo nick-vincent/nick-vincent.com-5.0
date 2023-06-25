@@ -210,8 +210,6 @@
 		li {
 			opacity: 1;
 			visibility: visible;
-			filter: blur(0);
-			transform: scale(1);
 		}
 	}
 </style>

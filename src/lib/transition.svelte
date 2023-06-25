@@ -49,11 +49,14 @@
 <style>
 	.transition {
 		transform-origin: 50% 2rem;
-		transition: transform calc(var(--duration-menu) * 2) var(--easing-accelerate);
+		transition: opacity calc(var(--duration-menu) * 2) var(--easing-accelerate),
+			transform calc(var(--duration-menu) * 2) var(--easing-accelerate);
 	}
 
 	:global(html.nav-open .transition) {
+		opacity: 0.75;
 		transform: scale(0.9);
-		transition: transform calc(var(--duration-menu) * 2) var(--easing-decelerate);
+		transition: opacity calc(var(--duration-menu) * 2) var(--easing-decelerate),
+			transform calc(var(--duration-menu) * 2) var(--easing-decelerate);
 	}
 </style>
