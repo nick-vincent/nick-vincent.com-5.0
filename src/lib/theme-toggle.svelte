@@ -48,13 +48,14 @@
 
 <style>
 	button {
+		z-index: 3;
 		cursor: pointer;
 		pointer-events: auto;
 		appearance: none;
 		position: relative;
 		display: block;
-		width: 0.75rem;
-		height: 0.75rem;
+		width: 18px;
+		height: 18px;
 		border: none;
 		border-radius: 50%;
 		background: none;
@@ -84,8 +85,8 @@
 	.circle {
 		display: block;
 		overflow: hidden;
-		width: 0.75rem;
-		height: 0.75rem;
+		width: 18px;
+		height: 18px;
 		border: 2px solid var(--color-ui);
 		border-radius: 50%;
 	}

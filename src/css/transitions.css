@@ -4,6 +4,8 @@
 	--easing-accelerate: cubic-bezier(0.4, 0, 1, 1);
 	--easing-sharp: cubic-bezier(0.4, 0, 0.6, 1);
 
+	--duration-menu: 150ms;
+
 	--transition-dom-x-ray: color 1s var(--easing-standard), border-color 1s var(--easing-standard),
 		background-color 1s var(--easing-standard), outline-color 1s var(--easing-standard),
 		opacity 1s var(--easing-standard), visibility 1s var(--easing-standard),

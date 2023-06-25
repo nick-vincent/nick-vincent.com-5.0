@@ -32,6 +32,11 @@
 		text-align: center;
 	}
 
+	/* :global(body.navOpen) main {
+		transform: scale(0.9);
+		transform-origin: 50vw 50vh;
+	} */
+
 	footer {
 		padding: 1rem 0 1rem 0;
 		text-align: center;
