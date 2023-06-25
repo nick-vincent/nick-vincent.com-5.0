@@ -52,6 +52,14 @@
 		inset: -0.5em;
 	}
 
+	a::after {
+		content: '';
+		display: block;
+		position: absolute;
+		inset: -0.5em;
+		border-radius: 0.5em;
+	}
+
 	a:focus {
 		opacity: 1;
 	}

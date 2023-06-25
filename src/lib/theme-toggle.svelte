@@ -60,7 +60,6 @@
 		border-radius: 50%;
 		background: none;
 		opacity: 0.75;
-		overflow: hidden;
 		transition: var(--transition-dom-x-ray), opacity 200ms var(--easing-standard);
 	}
 
@@ -73,7 +72,15 @@
 	}
 
 	button::before {
-		display: none;
+		inset: -0.5em;
+	}
+
+	button::after {
+		content: '';
+		display: block;
+		position: absolute;
+		inset: -0.5em;
+		border-radius: 0.5em;
 	}
 
 	@media (hover: hover) {

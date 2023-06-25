@@ -20,7 +20,7 @@ button::before {
 	content: '';
 	display: block;
 	position: absolute;
-	inset: -0.25em -0.5em;
+	inset: -0.5em;
 	background: var(--color-focus-highlight);
 	border-radius: 0.5em;
 	border: 0.05rem solid var(--color-focus-highlight);
