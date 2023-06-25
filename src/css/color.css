@@ -13,6 +13,7 @@
 	--light-color-bullet: rgba(0, 0, 0, 0.2);
 	--light-color-arrow: rgba(0, 0, 0, 0.2);
 	--light-color-focus-highlight: rgba(60, 120, 180, 0.15);
+	--light-header-text-shadow: rgba(255, 255, 255, 0.25) 1px 1px 0;
 	--light-image-filter: saturate(100%);
 	--light-body-gradient: radial-gradient(
 		circle at center top,
@@ -34,6 +35,7 @@
 	--dark-color-bullet: rgba(255, 255, 255, 0.25);
 	--dark-color-arrow: rgba(255, 255, 255, 0.15);
 	--dark-color-focus-highlight: rgba(94, 167, 255, 0.1);
+	--dark-header-text-shadow: rgba(0, 0, 0, 0.25) 1px 1px 0;
 	--dark-image-filter: saturate(90%);
 	--dark-body-gradient: radial-gradient(
 		circle at center 8rem,
@@ -61,6 +63,7 @@
 	--color-bullet: var(--light-color-bullet);
 	--color-arrow: var(--light-color-arrow);
 	--color-focus-highlight: var(--light-color-focus-highlight);
+	--header-text-shadow: var(--light-header-text-shadow);
 	--image-filter: var(--light-image-filter);
 	--light-body-gradient-opacity: 1;
 	--dark-body-gradient-opacity: 0;
@@ -86,6 +89,7 @@
 		--color-bullet: var(--dark-color-bullet);
 		--color-arrow: var(--dark-color-arrow);
 		--color-focus-highlight: var(--dark-color-focus-highlight);
+		--header-text-shadow: var(--dark-header-text-shadow);
 		--image-filter: var(--dark-image-filter);
 		--light-body-gradient-opacity: 0;
 		--dark-body-gradient-opacity: 1;
@@ -127,6 +131,7 @@
 	--color-bullet: var(--light-color-bullet);
 	--color-arrow: var(--light-color-arrow);
 	--color-focus-highlight: var(--light-color-focus-highlight);
+	--header-text-shadow: var(--light-header-text-shadow);
 	--image-filter: var(--light-image-filter);
 	--light-body-gradient-opacity: 1;
 	--dark-body-gradient-opacity: 0;
@@ -146,6 +151,7 @@
 	--color-bullet: var(--dark-color-bullet);
 	--color-arrow: var(--dark-color-arrow);
 	--color-focus-highlight: var(--dark-color-focus-highlight);
+	--header-text-shadow: var(--dark-header-text-shadow);
 	--image-filter: var(--dark-image-filter);
 	--light-body-gradient-opacity: 0;
 	--dark-body-gradient-opacity: 1;

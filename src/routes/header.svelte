@@ -60,17 +60,17 @@
 	/* light mode */
 	header::before {
 		background-image: var(--light-body-gradient);
-		/* opacity: var(--light-body-gradient-opacity); */
+	}
+	header.scrolled::before {
+		opacity: var(--light-body-gradient-opacity);
 	}
 
 	/* dark mode */
 	header::after {
 		background-image: var(--dark-body-gradient);
-		/* opacity: var(--dark-body-gradient-opacity); */
 	}
-
-	.scrolled::before {
-		opacity: 1;
+	header.scrolled::after {
+		opacity: var(--dark-body-gradient-opacity);
 	}
 
 	ul {
@@ -104,6 +104,7 @@
 	a {
 		color: var(--color-text);
 		text-decoration: none;
-		text-shadow: rgba(255, 255, 255, 0.25) 1px 1px 0;
+		text-shadow: var(--header-text-shadow);
+		transition: var(--transition-dom-x-ray), text-shadow 500ms var(--easing-sharp);
 	}
 </style>
