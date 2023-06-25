@@ -5,9 +5,20 @@
 
 	export let data;
 
+	let windowWidth;
+
 	$: pathParts = data.pathname.split('/');
 	$: dir = `/${pathParts[1]}`;
+
+	$: if (windowWidth) {
+		document.documentElement.classList.add('no-transitions');
+		setTimeout(() => {
+			document.documentElement.classList.remove('no-transitions');
+		}, 50);
+	}
 </script>
+
+<svelte:window bind:innerWidth={windowWidth} />
 
 <Header />
 
@@ -26,16 +37,17 @@
 </footer>
 
 <style>
+	:global(html.no-transitions *),
+	:global(html.no-transitions *::before),
+	:global(html.no-transitions *::after) {
+		transition: none !important;
+	}
+
 	main {
 		flex: 1;
 		padding: 6rem 0 4rem;
 		text-align: center;
 	}
-
-	/* :global(body.navOpen) main {
-		transform: scale(0.9);
-		transform-origin: 50vw 50vh;
-	} */
 
 	footer {
 		padding: 1rem 0 1rem 0;

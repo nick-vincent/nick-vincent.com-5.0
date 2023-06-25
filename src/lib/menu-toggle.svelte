@@ -49,7 +49,7 @@
 	}
 
 	a::before {
-		inset: 0.5em;
+		inset: -0.5em;
 	}
 
 	a:focus {

@@ -1,5 +1,7 @@
 <script>
 	import { page } from '$app/stores';
+	import { browser } from '$app/environment';
+
 	import MenuToggle from '$lib/menu-toggle.svelte';
 	import ThemeToggle from '$lib/theme-toggle.svelte';
 
@@ -17,31 +19,24 @@
 		{ text: 'Contact', href: '/contact/' }
 	];
 
-	const itemDurationIn = durationIn / navItems.length;
-	const itemDurationOut = durationOut / navItems.length;
-
-	const itemDelayIn = (i) => delay + itemDurationIn * i;
-	const itemDelayOut = (i) => (navItems.length - i) * itemDurationOut;
-	const itemStyles = (i) => {
-		return `
-      --duration-in: ${itemDurationIn}ms;
-      --duration-out: ${itemDurationOut}ms;
-      --delay-in: ${itemDelayIn(i)}ms;
-      --delay-out: ${itemDelayOut(i)}ms;
-    `;
-	};
-
+	let width;
 	let scrollPos;
 
 	$: scrolled = scrollPos > 0;
+	$: overlay = scrolled || open;
+	$: border = !scrolled || open;
 
-	// $: document && document.body.classList.toggle('navOpen', open);
+	$: if (width >= 640) open = false;
+
+	$: if (browser) {
+		document.documentElement.classList.toggle('nav-open', open);
+	}
 </script>
 
 <svelte:window bind:scrollY={scrollPos} />
 
-<header class:scrolled class:open>
-	<nav>
+<header class:overlay class:open bind:clientWidth={width}>
+	<nav class:border>
 		<div id="menu">
 			<MenuToggle bind:open />
 		</div>
@@ -56,7 +51,7 @@
 		</div>
 		<ul id="navigation">
 			{#each navItems as { href, text }, i}
-				<li style={itemStyles(i)}>
+				<li>
 					<a
 						on:click={() => (open = false)}
 						aria-current={$page.url.pathname === href ? 'page' : null}
@@ -79,12 +74,12 @@
 		padding: 1rem 1rem 0;
 		backdrop-filter: blur(1rem);
 		-webkit-backdrop-filter: blur(1rem);
-		transition: min-height var(--duration-menu) ease-in-out;
+		transition: min-height calc(var(--duration-menu) * 2) var(--easing-accelerate);
 	}
 
 	header.open {
-		min-height: 100vh;
-		transition: min-height var(--duration-menu) ease-in-out;
+		min-height: 100dvh;
+		transition: min-height calc(var(--duration-menu) * 2) var(--easing-decelerate);
 	}
 
 	header::before,
@@ -104,8 +99,7 @@
 	header::before {
 		background-image: var(--light-body-gradient);
 	}
-	header.open::before,
-	header.scrolled::before {
+	header.overlay::before {
 		opacity: var(--light-body-gradient-opacity);
 	}
 
@@ -113,8 +107,7 @@
 	header::after {
 		background-image: var(--dark-body-gradient);
 	}
-	header.open::after,
-	header.scrolled::after {
+	header.overlay::after {
 		opacity: var(--dark-body-gradient-opacity);
 	}
 
@@ -127,11 +120,11 @@
 		max-width: 38rem;
 		padding: 0 0 1rem;
 		margin: 0 auto;
-		border-bottom: 0.05rem solid var(--color-line);
-	}
-
-	header.scrolled:not(.open) nav {
 		border-bottom: 0.05rem solid transparent;
+		transition: var(--transition-dom-x-ray), border-bottom var(--duration-menu) ease-in-out;
+	}
+	nav.border {
+		border-bottom: 0.05rem solid var(--color-line);
 	}
 
 	ul {
@@ -153,23 +146,15 @@
 		margin: 0;
 		opacity: 0;
 		visibility: hidden;
-		filter: blur(0.25rem);
-		transform: scale(0.5);
-		transition: visibility var(--duration-out) ease-in-out var(--delay-out),
-			opacity var(--duration-out) ease-in-out var(--delay-out),
-			filter var(--duration-out) ease-in-out var(--delay-out),
-			transform var(--duration-out) ease-in-out var(--delay-out);
+		transition: visibility var(--duration-menu) ease-in-out,
+			opacity var(--duration-menu) ease-in-out;
 	}
 
 	header.open li {
 		opacity: 1;
 		visibility: visible;
-		filter: blur(0);
-		transform: scale(1);
-		transition: visibility var(--duration-in) ease-in-out var(--delay-in),
-			opacity var(--duration-in) ease-in-out var(--delay-in),
-			filter var(--duration-in) ease-in-out var(--delay-in),
-			transform var(--duration-in) ease-in-out var(--delay-in);
+		transition: visibility var(--duration-menu) ease-in-out var(--duration-menu),
+			opacity var(--duration-menu) ease-in-out var(--duration-menu);
 	}
 
 	#home {
@@ -185,7 +170,7 @@
 		text-shadow: var(--header-text-shadow);
 		transition: var(--transition-dom-x-ray), text-shadow 500ms var(--easing-sharp);
 	}
-	.scrolled a {
+	header.overlay a {
 		color: var(--color-h1);
 	}
 
@@ -202,26 +187,8 @@
 			margin-right: auto;
 		}
 
-		header.open {
-			min-height: 0;
-		}
-
-		header::before,
-		header::after {
-			border-bottom: 0.05rem solid var(--color-line);
-		}
-
-		header.open:not(.scrolled)::before,
-		header.open:not(.scrolled)::after {
-			opacity: 0;
-		}
-
 		nav {
 			justify-content: flex-end;
-		}
-
-		header.scrolled nav {
-			border-bottom: 0.05rem solid transparent;
 		}
 
 		ul {
