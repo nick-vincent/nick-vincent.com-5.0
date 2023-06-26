@@ -97,6 +97,16 @@
 		transition: var(--transition-dom-x-ray), box-shadow 150ms ease-in, transform 150ms ease-in;
 	}
 
+	.card::after {
+		content: '';
+		display: block;
+		position: absolute;
+		inset: 0;
+		z-index: 1;
+		border-radius: 0.5rem;
+		box-shadow: inset 0 0 0 1px var(--color-line);
+	}
+
 	/* light gradient */
 	.shine {
 		z-index: 2;
