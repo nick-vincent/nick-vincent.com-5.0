@@ -15,6 +15,7 @@
 	}
 
 	function resizeGridItem(item) {
+		item.style.gridRowEnd = '';
 		const grid = item.closest('.grid');
 		const rowHeight = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-auto-rows'));
 		const rowGap = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-row-gap'));
@@ -205,7 +206,7 @@
 <style>
 	article {
 		display: grid;
-		gap: 2em;
+		gap: 2.25em;
 		max-width: calc(100vw - 2rem);
 		padding: 2.5rem 1.5rem;
 		margin: 2em auto;
@@ -214,7 +215,7 @@
 		letter-spacing: normal;
 		text-align: left;
 		background-color: var(--color-resume-background);
-		box-shadow: var(--image-shadow);
+		box-shadow: var(--image-shadow), inset 0 0 0 1px var(--color-line);
 		opacity: 0;
 	}
 
@@ -246,14 +247,14 @@
 	#education,
 	#experience {
 		display: grid;
-		gap: 2em;
+		gap: 2.25em;
 		align-content: start;
 	}
 
 	.column {
 		display: grid;
 		align-items: start;
-		gap: 2em;
+		gap: 2.25em;
 	}
 
 	header p {
@@ -281,9 +282,9 @@
 		margin: 0;
 	}
 
-	p,
-	ul {
-		max-width: 20em;
+	main p,
+	main ul {
+		max-width: 16em;
 	}
 
 	a {
@@ -319,12 +320,16 @@
 		padding-bottom: 1em;
 	}
 
-	@media (min-width: 960px) {
+	@media (min-width: 720px) {
 		header {
 			display: grid;
-			grid-template-columns: repeat(3, 1fr);
-			align-items: end;
-			gap: 2em;
+			grid-template-columns: repeat(2, 1fr);
+			column-gap: 2.25em;
+		}
+
+		header h1 {
+			grid-column-start: 1;
+			grid-column-end: 3;
 		}
 
 		#contact {
@@ -333,9 +338,42 @@
 
 		main {
 			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-auto-rows: 1em;
+			gap: 2.25em;
+		}
+
+		#experience {
+			display: grid;
+			grid-template-columns: 1fr;
+			align-items: start;
+			gap: 2.25em;
+
+			grid-row-start: 1;
+			grid-column-start: 2;
+			grid-column-end: 3;
+		}
+
+		#experience h2 {
+			grid-column-start: 1;
+		}
+	}
+
+	@media (min-width: 960px) {
+		header {
+			grid-template-columns: repeat(3, 1fr);
+			align-items: end;
+		}
+
+		header h1 {
+			grid-column-end: 1;
+		}
+
+		main {
+			display: grid;
 			grid-template-columns: repeat(3, 1fr);
 			grid-auto-rows: 1em;
-			gap: 2em;
+			gap: 2.25em;
 		}
 
 		#expertise {
@@ -352,7 +390,7 @@
 			display: grid;
 			grid-template-columns: repeat(2, 1fr);
 			align-items: start;
-			gap: 2em;
+			gap: 2.25em;
 
 			grid-row-start: 1;
 			grid-column-start: 2;
