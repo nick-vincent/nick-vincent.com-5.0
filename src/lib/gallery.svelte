@@ -10,10 +10,10 @@
 
 <ul>
 	{#each images as image, i}
-		<li in:scale={{ duration: 500, delay: i * 50, start: 0.5, easing: expoInOut }}>
-			<Thumbnail {image} />
-			<!-- <Loader>
-			</Loader> -->
+		<li in:scale={{ duration: 500, delay: i * 50 + 250, start: 0.5, easing: expoInOut }}>
+			<Loader>
+				<Thumbnail {image} />
+			</Loader>
 		</li>
 	{/each}
 </ul>
