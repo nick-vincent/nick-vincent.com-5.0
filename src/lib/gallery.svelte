@@ -3,7 +3,6 @@
 	import { expoInOut } from 'svelte/easing';
 
 	import Thumbnail from '$lib/thumbnail.svelte';
-	import Loader from '$lib/loader.svelte';
 
 	export let images = [];
 </script>
@@ -11,9 +10,7 @@
 <ul>
 	{#each images as image, i}
 		<li in:scale|global={{ duration: 500, delay: i * 50 + 250, start: 0.5, easing: expoInOut }}>
-			<Loader>
-				<Thumbnail {image} />
-			</Loader>
+			<Thumbnail {image} />
 		</li>
 	{/each}
 </ul>
