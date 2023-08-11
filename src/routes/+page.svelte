@@ -1,10 +1,13 @@
 <script>
-	import Image from '../img/nick-vincent.jpg?format=webp&w=480&h=480&as=meta';
+	import Image from '$lib/image.svelte';
+	import Portrait from '../img/nick-vincent.jpg?format=webp&w=680&h=680&as=meta';
 </script>
 
 <h1>Nick Vincent</h1>
 
-<img alt="Portrait of Nick Vincent" src={Image.src} width="480" height="480" />
+<div class="image">
+	<Image src={Portrait.src} alt="Portrait of Nick Vincent" radius="50%" width="680" height="680" />
+</div>
 
 <!-- <p>is known to</p>
 
@@ -21,28 +24,27 @@
 </p> -->
 
 <style>
-	img {
-		border-radius: 50%;
+	.image {
 		width: 14rem;
-		height: auto;
-		margin-top: 1rem;
-		background-color: var(--image-background);
+		margin: 1rem auto 0;
+		border-radius: 50%;
 		box-shadow: var(--image-shadow);
 	}
 
+	/* 
 	ul {
 		display: flex;
 		justify-content: center;
 		gap: 1rem;
 		padding: 0;
 		margin: 0;
-		/* font-size: 0.75rem; */
-		/* font-weight: 500; */
+		font-size: 0.75rem;
+		font-weight: 500;
 		list-style: none;
 	}
 
 	li {
 		padding: 0;
 		margin: 0;
-	}
+	} */
 </style>
