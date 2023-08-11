@@ -41,7 +41,7 @@
 <svelte:window bind:innerWidth={windowWidth} />
 
 {#key pathname}
-	<div class="transition" in:transition={inTransition} out:transition={outTransition}>
+	<div class="transition" in:transition|global={inTransition} out:transition|global={outTransition}>
 		<slot />
 	</div>
 {/key}

@@ -11,7 +11,7 @@
 </script>
 
 {#key image}
-	<!-- <div in:fly={{ duration: 300, delay: 400, x: 200 }} out:fly={{ duration: 300, x: -200 }}> -->
+	<!-- <div in:fly|global={{ duration: 300, delay: 400, x: 200 }} out:fly|global={{ duration: 300, x: -200 }}> -->
 	<Lightbox {image} {prevImage} {nextImage} backUrl="/faces/" feedUrl="/faces/feed" />
 	<!-- </div> -->
 {/key}

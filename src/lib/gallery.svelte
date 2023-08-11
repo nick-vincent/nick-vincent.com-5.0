@@ -10,7 +10,7 @@
 
 <ul>
 	{#each images as image, i}
-		<li in:scale={{ duration: 500, delay: i * 50 + 250, start: 0.5, easing: expoInOut }}>
+		<li in:scale|global={{ duration: 500, delay: i * 50 + 250, start: 0.5, easing: expoInOut }}>
 			<Loader>
 				<Thumbnail {image} />
 			</Loader>
