@@ -14,9 +14,9 @@
 	--light-color-arrow: rgba(0, 0, 0, 0.2);
 	--light-color-focus-highlight: rgba(60, 120, 180, 0.15);
 	--light-color-resume-text: #333;
-	--light-color-resume-background: #f0f0f0;
+	--light-color-resume-background: rgba(255, 255, 255, 0.5);
+	--light-color-image-background: rgba(0, 0, 63, 0.05);
 	--light-header-text-shadow: rgba(255, 255, 255, 0.25) 1px 1px 0;
-	--light-image-filter: saturate(100%);
 	--light-body-gradient: radial-gradient(
 		circle at center top,
 		rgba(255, 255, 255, 0.9) 0,
@@ -38,9 +38,9 @@
 	--dark-color-arrow: rgba(255, 255, 255, 0.15);
 	--dark-color-focus-highlight: rgba(94, 167, 255, 0.1);
 	--dark-color-resume-text: #ccc;
-	--dark-color-resume-background: #222;
+	--dark-color-resume-background: rgba(255, 255, 255, 0.05);
+	--dark-color-image-background: rgba(0, 0, 0, 0.1);
 	--dark-header-text-shadow: rgba(0, 0, 0, 0.25) 1px 1px 0;
-	--dark-image-filter: saturate(90%);
 	--dark-body-gradient: radial-gradient(
 		circle at center 8rem,
 		rgba(0, 0, 0, 0.25),
@@ -69,13 +69,12 @@
 	--color-focus-highlight: var(--light-color-focus-highlight);
 	--color-resume-text: var(--light-color-resume-text);
 	--color-resume-background: var(--light-color-resume-background);
+	--color-image-background: var(--light-color-image-background);
 	--header-text-shadow: var(--light-header-text-shadow);
-	--image-filter: var(--light-image-filter);
 	--light-body-gradient-opacity: 1;
 	--dark-body-gradient-opacity: 0;
 
 	/* general vars */
-	--image-background: rgba(0, 0, 0, 0.1);
 	--image-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
 	--image-shadow-focus: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.25);
 }
@@ -97,8 +96,8 @@
 		--color-focus-highlight: var(--dark-color-focus-highlight);
 		--color-resume-text: var(--dark-color-resume-text);
 		--color-resume-background: var(--dark-color-resume-background);
+		--color-image-background: var(--dark-color-image-background);
 		--header-text-shadow: var(--dark-header-text-shadow);
-		--image-filter: var(--dark-image-filter);
 		--light-body-gradient-opacity: 0;
 		--dark-body-gradient-opacity: 1;
 	}
@@ -119,7 +118,6 @@
 		--color-bullet: black;
 		--color-arrow: black;
 		--color-focus-highlight: transparent;
-		--image-filter: none;
 		--light-body-gradient-opacity: 0;
 		--dark-body-gradient-opacity: 0;
 	}
@@ -141,8 +139,8 @@
 	--color-focus-highlight: var(--light-color-focus-highlight);
 	--color-resume-text: var(--light-color-resume-text);
 	--color-resume-background: var(--light-color-resume-background);
+	--color-image-background: var(--light-color-image-background);
 	--header-text-shadow: var(--light-header-text-shadow);
-	--image-filter: var(--light-image-filter);
 	--light-body-gradient-opacity: 1;
 	--dark-body-gradient-opacity: 0;
 }
@@ -163,8 +161,8 @@
 	--color-focus-highlight: var(--dark-color-focus-highlight);
 	--color-resume-text: var(--dark-color-resume-text);
 	--color-resume-background: var(--dark-color-resume-background);
+	--color-image-background: var(--dark-color-image-background);
 	--header-text-shadow: var(--dark-header-text-shadow);
-	--image-filter: var(--dark-image-filter);
 	--light-body-gradient-opacity: 0;
 	--dark-body-gradient-opacity: 1;
 }
@@ -228,8 +226,4 @@ button {
 a::after,
 button::after {
 	color: var(--color-arrow);
-}
-
-img {
-	filter: var(--image-filter);
 }
