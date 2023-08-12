@@ -1,7 +1,7 @@
 <script>
 	import { goto } from '$app/navigation';
 
-	import Image from '$lib/image.svelte';
+	import Image from '$lib/Image.svelte';
 	import Details from '$lib/gallery/Details.svelte';
 
 	export let dir;

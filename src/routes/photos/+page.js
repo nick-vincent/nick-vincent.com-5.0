@@ -1,4 +1,4 @@
-import { getImageData } from '$lib/data';
+import { getImageData } from '$lib/js/data';
 
 export function load() {
 	const images = getImageData('photos');

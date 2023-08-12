@@ -2,8 +2,8 @@
 	import { page } from '$app/stores';
 	import { browser } from '$app/environment';
 
-	import MenuToggle from '$lib/menu-toggle.svelte';
-	import ThemeToggle from '$lib/theme-toggle.svelte';
+	import MenuToggle from '$lib/ui/MenuToggle.svelte';
+	import ThemeToggle from '$lib/ui/ThemeToggle.svelte';
 
 	export let open = false;
 

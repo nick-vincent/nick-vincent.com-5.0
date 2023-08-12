@@ -1,5 +1,5 @@
 <script>
-	import Image from '$lib/image.svelte';
+	import Image from '$lib/Image.svelte';
 
 	export let image;
 

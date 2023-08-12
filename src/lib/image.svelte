@@ -1,7 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
 	import { createObserver } from 'svelte-use-io';
-	import Spinner from '$lib/spinner.svelte';
+	import Spinner from '$lib/ui/Spinner.svelte';
 
 	export let src;
 	export let alt;

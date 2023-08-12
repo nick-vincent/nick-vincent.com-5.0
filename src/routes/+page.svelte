@@ -1,5 +1,5 @@
 <script>
-	import Image from '$lib/image.svelte';
+	import Image from '$lib/Image.svelte';
 	import Portrait from '../img/nick-vincent.jpg?format=webp&w=680&h=680&as=meta';
 </script>
 
