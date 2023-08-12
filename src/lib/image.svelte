@@ -1,9 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
-	import { scale } from 'svelte/transition';
-	import { backIn, backOut } from 'svelte/easing';
-
 	import { createObserver } from 'svelte-use-io';
+	import Spinner from '$lib/spinner.svelte';
 
 	export let src;
 	export let alt;
@@ -49,11 +47,7 @@
 		on:load|once={onLoad}
 	/>
 	{#if visible && !loaded}
-		<span
-			class="spinner"
-			in:scale|global={{ duration: 500, delay: 500, start: 0, easing: backOut }}
-			out:scale|global={{ duration: 500, start: 0, easing: backIn }}
-		/>
+		<Spinner />
 	{/if}
 </span>
 
@@ -89,41 +83,5 @@
 	.loaded img,
 	:global(html.no-js) img {
 		opacity: 1;
-	}
-
-	.spinner {
-		z-index: 2;
-		position: absolute;
-		display: block;
-		inset: 0;
-	}
-	.spinner::before,
-	.spinner::after {
-		content: '';
-		position: absolute;
-		width: 25%;
-		height: auto;
-		aspect-ratio: 1;
-		left: 50%;
-		top: 50%;
-		border-radius: 100%;
-		transform: translate(-50%, -50%);
-	}
-	.spinner::before {
-		border: 0.1rem solid var(--color-line);
-	}
-	.spinner::after {
-		border: 0.1rem solid transparent;
-		border-top: 0.1rem solid var(--color-line);
-		animation: spinner 1s infinite;
-	}
-
-	@keyframes spinner {
-		0% {
-			transform: translate(-50%, -50%) rotate(0deg);
-		}
-		100% {
-			transform: translate(-50%, -50%) rotate(360deg);
-		}
 	}
 </style>
