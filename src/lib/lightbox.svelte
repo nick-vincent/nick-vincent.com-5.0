@@ -7,6 +7,8 @@
 	// import InstagramLink from '$lib/InstagramLink.svelte';
 	// import FeedLink from '$lib/FeedLink.svelte';
 
+	import Image from '$lib/image.svelte';
+
 	export let image;
 	export let prevImage;
 	export let nextImage;
@@ -23,21 +25,7 @@
 
 	const { observer } = createObserver();
 
-	let img;
-	let loaded = false;
 	let grabbing = false;
-
-	onMount(() => {
-		img.removeAttribute('src');
-	});
-
-	function onLoad() {
-		loaded = true;
-	}
-
-	function onVisible() {
-		img.src = src;
-	}
 
 	function onKeyUp(e) {
 		switch (e.key) {
@@ -122,23 +110,16 @@
 			</ul>
 		{/if}
 	</div>
-	<div class="left" style:aspect-ratio={aspect}>
-		<img
-			bind:this={img}
-			{src}
-			alt={title}
-			class:loaded
-			class:grabbing
-			style:aspect-ratio={aspect}
-			on:load|once={onLoad}
-			use:observer={{ once: true }}
-			on:intersecting={onVisible}
-			use:swipeable
-			on:swipestart={onSwipeStart}
-			on:swipemove={(e) => onSwipeMove(e)}
-			on:swipecancel={(e) => onSwipeCancel(e)}
-			on:swipe={(e) => onSwipe(e)}
-		/>
+	<div
+		class="left"
+		class:grabbing
+		use:swipeable
+		on:swipestart={onSwipeStart}
+		on:swipemove={(e) => onSwipeMove(e)}
+		on:swipecancel={(e) => onSwipeCancel(e)}
+		on:swipe={(e) => onSwipe(e)}
+	>
+		<Image {src} alt={title} {aspect} radius="1rem" delay="500ms" />
 	</div>
 </div>
 
@@ -154,7 +135,9 @@
 		justify-content: center;
 		gap: 1rem;
 		will-change: transform;
-		transition: var(--transition-dom-x-ray), transform 0s;
+		transition:
+			var(--transition-dom-x-ray),
+			transform 0s;
 		text-align: left;
 	}
 
@@ -162,8 +145,8 @@
 		order: 1;
 		max-width: 100%;
 		border-radius: 1rem;
-		background-color: rgba(0, 0, 0, 0.1);
 		box-shadow: var(--image-shadow);
+		cursor: grab;
 	}
 	.right {
 		order: 2;
@@ -183,21 +166,7 @@
 		margin: 1.5rem 0 0;
 	}
 
-	img {
-		cursor: grab;
-		display: block;
-		width: 100%;
-		height: auto;
-		border-radius: 1rem;
-		opacity: 0;
-		will-change: opacity;
-		transition: var(--transition-dom-x-ray), opacity 1s ease;
-	}
-	img.loaded,
-	:global(html.no-js) img {
-		opacity: 1;
-	}
-	img.grabbing {
+	.grabbing {
 		cursor: grabbing;
 	}
 </style>

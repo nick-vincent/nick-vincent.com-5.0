@@ -7,8 +7,7 @@
 
 	export let src;
 	export let alt;
-	export let width;
-	export let height;
+	export let aspect;
 	export let radius = 'none';
 	export let delay = '0ms';
 
@@ -41,7 +40,14 @@
 	use:observer={{ once: true }}
 	on:intersecting={onVisible}
 >
-	<img bind:this={img} {src} {alt} {width} {height} loading="lazy" on:load|once={onLoad} />
+	<img
+		bind:this={img}
+		{src}
+		{alt}
+		loading="lazy"
+		style:aspect-ratio={aspect}
+		on:load|once={onLoad}
+	/>
 	{#if visible && !loaded}
 		<span
 			class="spinner"
@@ -96,7 +102,8 @@
 		content: '';
 		position: absolute;
 		width: 25%;
-		height: 25%;
+		height: auto;
+		aspect-ratio: 1;
 		left: 50%;
 		top: 50%;
 		border-radius: 100%;

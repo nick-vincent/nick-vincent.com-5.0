@@ -32,7 +32,7 @@
 		style:--rotateX={rotateX}
 		style:--rotateY={rotateY}
 	>
-		<Image {src} alt={title} width="280" height="280" radius="0.5rem" delay="500ms" />
+		<Image {src} alt={title} aspect="1" radius="0.5rem" delay="500ms" />
 		<span class="shine" />
 	</span>
 </a>

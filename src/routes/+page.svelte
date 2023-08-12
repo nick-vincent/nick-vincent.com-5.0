@@ -6,7 +6,7 @@
 <h1>Nick Vincent</h1>
 
 <div class="image">
-	<Image src={Portrait.src} alt="Portrait of Nick Vincent" radius="50%" width="680" height="680" />
+	<Image src={Portrait.src} alt="Portrait of Nick Vincent" aspect="1" radius="50%" />
 </div>
 
 <!-- <p>is known to</p>
