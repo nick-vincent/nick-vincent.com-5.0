@@ -5,9 +5,10 @@
 
 	export let data;
 
-	const { dir } = data;
-
 	let windowWidth;
+
+	$: pathParts = data.pathname.split('/');
+	$: dir = `/${pathParts[1]}`;
 
 	$: if (windowWidth) {
 		document.documentElement.classList.add('no-transitions');
