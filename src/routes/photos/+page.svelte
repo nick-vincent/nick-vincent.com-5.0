@@ -5,7 +5,9 @@
 	const images = getImageData('photos');
 </script>
 
-<h1>Photos</h1>
-<p>Photography from around the world.</p>
+<div class="intro">
+	<h1>Photos</h1>
+	<p>Photography from around the world.</p>
+</div>
 
 <Gallery {images} />

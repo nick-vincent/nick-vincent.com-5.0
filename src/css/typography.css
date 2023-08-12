@@ -32,6 +32,10 @@ p:not(:last-child) {
 	margin-bottom: 1em;
 }
 
+.intro {
+	margin-bottom: 2em;
+}
+
 ul {
 	display: block;
 	margin: 1em 0 0;
