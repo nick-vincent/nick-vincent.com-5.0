@@ -25,6 +25,7 @@
 
 	const { observer } = createObserver();
 
+	let left;
 	let grabbing = false;
 
 	function onKeyUp(e) {
@@ -61,7 +62,7 @@
 	function onSwipeCancel(e) {
 		grabbing = false;
 		const { dx, direction } = e.detail;
-		const swiped = Math.abs(dx) > img.clientWidth / 2;
+		const swiped = Math.abs(dx) > left.clientWidth / 2;
 
 		if (swiped && direction === 'left') {
 			if (nextImage) goto(nextImage.url);
@@ -111,6 +112,7 @@
 		{/if}
 	</div>
 	<div
+		bind:this={left}
 		class="left"
 		class:grabbing
 		use:swipeable
