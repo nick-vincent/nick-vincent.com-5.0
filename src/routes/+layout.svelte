@@ -1,6 +1,6 @@
 <script>
 	import Header from './header.svelte';
-	import Transition from '$lib/transition.svelte';
+	import PageTransition from '$lib/PageTransition.svelte';
 	import '../app.css';
 
 	export let data;
@@ -23,9 +23,9 @@
 <Header />
 
 <main>
-	<Transition pathname={dir}>
+	<PageTransition key={dir}>
 		<slot />
-	</Transition>
+	</PageTransition>
 </main>
 
 <footer>
@@ -37,12 +37,6 @@
 </footer>
 
 <style>
-	:global(html.no-transitions *),
-	:global(html.no-transitions *::before),
-	:global(html.no-transitions *::after) {
-		transition: none !important;
-	}
-
 	main {
 		flex: 1;
 		padding: 6rem 0 4rem;

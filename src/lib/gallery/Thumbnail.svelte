@@ -3,8 +3,7 @@
 
 	export let image;
 
-	const { title, url, thumbData } = image;
-	const { src } = thumbData;
+	const { title, url, thumb } = image;
 
 	let card;
 	let mouseX = 0;
@@ -32,7 +31,7 @@
 		style:--rotateX={rotateX}
 		style:--rotateY={rotateY}
 	>
-		<Image {src} alt={title} aspect="1" radius="0.5rem" delay="500ms" />
+		<Image src={thumb} alt={title} aspect="1" radius="0.5rem" delay="500ms" />
 		<span class="shine" />
 	</span>
 </a>

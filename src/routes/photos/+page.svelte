@@ -1,13 +1,9 @@
 <script>
-	import Gallery from '$lib/gallery.svelte';
-	import { getImageData } from '$lib/data';
+	import Grid from '$lib/gallery/Grid.svelte';
 
-	const images = getImageData('photos');
+	export let data;
+
+	$: images = data.images;
 </script>
 
-<div class="intro">
-	<h1>Photos</h1>
-	<p>Photography from around the world.</p>
-</div>
-
-<Gallery {images} />
+<Grid {images} />

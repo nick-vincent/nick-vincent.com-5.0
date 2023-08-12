@@ -117,11 +117,13 @@
 		flex-wrap: wrap;
 		justify-content: space-between;
 		align-items: center;
-		max-width: 38rem;
+		max-width: 50rem;
 		padding: 0 0 1rem;
 		margin: 0 auto;
 		border-bottom: 0.05rem solid transparent;
-		transition: var(--transition-dom-x-ray), border-bottom var(--duration-menu) ease-in-out;
+		transition:
+			var(--transition-dom-x-ray),
+			border-bottom var(--duration-menu) ease-in-out;
 	}
 	nav.border {
 		border-bottom: 0.05rem solid var(--color-line);
@@ -146,14 +148,16 @@
 		margin: 0;
 		opacity: 0;
 		visibility: hidden;
-		transition: visibility var(--duration-menu) ease-in-out,
+		transition:
+			visibility var(--duration-menu) ease-in-out,
 			opacity var(--duration-menu) ease-in-out;
 	}
 
 	header.open li {
 		opacity: 1;
 		visibility: visible;
-		transition: visibility var(--duration-menu) ease-in-out var(--duration-menu),
+		transition:
+			visibility var(--duration-menu) ease-in-out var(--duration-menu),
 			opacity var(--duration-menu) ease-in-out var(--duration-menu);
 	}
 
@@ -168,7 +172,9 @@
 		color: var(--color-text);
 		text-decoration: none;
 		text-shadow: var(--header-text-shadow);
-		transition: var(--transition-dom-x-ray), text-shadow 500ms var(--easing-sharp);
+		transition:
+			var(--transition-dom-x-ray),
+			text-shadow 500ms var(--easing-sharp);
 	}
 	header.overlay a {
 		color: var(--color-h1);

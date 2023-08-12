@@ -2,7 +2,7 @@
 	import { scale } from 'svelte/transition';
 	import { expoInOut } from 'svelte/easing';
 
-	import Thumbnail from '$lib/thumbnail.svelte';
+	import Thumbnail from '$lib/gallery/Thumbnail.svelte';
 
 	export let images = [];
 </script>

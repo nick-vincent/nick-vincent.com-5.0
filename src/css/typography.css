@@ -33,7 +33,7 @@ p:not(:last-child) {
 }
 
 .intro {
-	margin-bottom: 2em;
+	padding-bottom: 3rem;
 }
 
 ul {
@@ -51,13 +51,32 @@ li {
 ul.bullet {
 	padding: 0 0 0 1em;
 }
-
 ul.bullet li::before {
 	content: '\2022';
 	display: inline-block;
 	position: absolute;
 	width: 1em;
 	left: -1em;
+}
+
+ul.inline {
+	display: flex;
+}
+ul.inline li {
+	display: inline-block;
+}
+ul.inline li:not(:first-child) {
+	border-left: 1px solid var(--color-line);
+	margin-left: 0.75rem;
+	padding-left: 0.75rem;
+}
+
+hr {
+	height: 0;
+	margin: 0;
+	padding: 0;
+	border: none;
+	border-top: 0.05rem solid var(--color-line);
 }
 
 .visually-hidden {

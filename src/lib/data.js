@@ -3,10 +3,10 @@ import slugify from 'slugify';
 import { data as photosData } from '../img/photos/_manifest.js';
 import { data as facesData } from '../img/faces/_manifest.js';
 
-function loadFiles(folder) {
+function loadFiles(dir) {
 	let thumbFiles, imageFiles, feedFiles;
 
-	switch (folder) {
+	switch (dir) {
 		case 'photos':
 			thumbFiles = import.meta.glob('../img/photos/*.jpg', {
 				eager: true,
@@ -41,28 +41,36 @@ function loadFiles(folder) {
 }
 
 export const getImageData = function (
-	folder,
+	dir,
 	extension = 'jpg',
 	titleTemplate = (t) => t,
 	captionTemplate = (c) => c
 ) {
 	const images = [];
-	const { thumbFiles, imageFiles, feedFiles } = loadFiles(folder);
-	const data = folder === 'photos' ? photosData : facesData;
+	const { thumbFiles, imageFiles, feedFiles } = loadFiles(dir);
+	const data = dir === 'photos' ? photosData : facesData;
 
 	for (let i = 0; i < data.length; i++) {
 		const image = { ...data[i] };
+
+		const id = image.id;
 		const slug = `${image.date}-${slugify(image.title, { lower: true, strict: true })}`;
-		const url = `/${folder}/${slug}/`;
+		const url = `/${dir}/${slug}/`;
 		const date = dayjs(image.date).format('MMM D, YYYY');
-		const path = `../img/${folder}/${slug}.${extension}`;
+		const path = `../img/${dir}/${slug}.${extension}`;
 		const title = titleTemplate(image.title);
 		const caption = captionTemplate(image.caption);
-		const thumbData = thumbFiles[path];
+
 		const imageData = imageFiles[path];
+		const { src, aspect } = imageData;
+
+		const thumbData = thumbFiles[path];
+		const thumb = thumbData.src;
+
 		// const feedData = feedFiles[path];
 		// images[i] = { ...image, title, caption, slug, url, date, thumbData, imageData, feedData };
-		images[i] = { ...image, title, caption, slug, url, date, thumbData, imageData };
+
+		images[i] = { id, title, caption, slug, url, date, thumb, src, aspect };
 	}
 	return images;
 };

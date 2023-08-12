@@ -59,9 +59,8 @@
 		border-radius: var(--border-radius);
 		background-color: var(--color-image-background);
 	}
-	.wrapper::before {
+	.wrapper::after {
 		content: '';
-		z-index: 3;
 		position: absolute;
 		display: block;
 		inset: 0;
@@ -70,7 +69,6 @@
 	}
 
 	img {
-		z-index: 1;
 		display: block;
 		width: 100%;
 		height: auto;

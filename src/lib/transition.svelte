@@ -40,23 +40,37 @@
 
 <svelte:window bind:innerWidth={windowWidth} />
 
-{#key pathname}
-	<div class="transition" in:transition|global={inTransition} out:transition|global={outTransition}>
-		<slot />
-	</div>
-{/key}
+<div class="grid">
+	{#key pathname}
+		<div class="transition" in:transition={inTransition} out:transition={outTransition}>
+			<slot />
+		</div>
+	{/key}
+</div>
 
 <style>
 	.transition {
 		transform-origin: 50% 2rem;
-		transition: opacity calc(var(--duration-menu) * 2) var(--easing-accelerate),
+		transition:
+			opacity calc(var(--duration-menu) * 2) var(--easing-accelerate),
 			transform calc(var(--duration-menu) * 2) var(--easing-accelerate);
 	}
 
 	:global(html.nav-open .transition) {
 		opacity: 0.75;
 		transform: scale(0.9);
-		transition: opacity calc(var(--duration-menu) * 2) var(--easing-decelerate),
+		transition:
+			opacity calc(var(--duration-menu) * 2) var(--easing-decelerate),
 			transform calc(var(--duration-menu) * 2) var(--easing-decelerate);
+	}
+
+	.grid {
+		display: grid;
+		grid-template-rows: 1fr;
+		grid-template-columns: 1fr;
+	}
+	.grid > div {
+		grid-row: 1;
+		grid-column: 1;
 	}
 </style>
