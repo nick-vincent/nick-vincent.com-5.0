@@ -45,7 +45,7 @@
 	main {
 		flex: 1;
 		padding: 6rem 0 4rem;
-		text-align: center;
+		text-align: left;
 	}
 
 	footer {
