@@ -209,13 +209,14 @@
 		gap: 2.25em;
 		max-width: calc(100vw - 2rem);
 		padding: 2.5rem 1.5rem;
-		margin: 2em auto;
 		font-size: 16px;
 		line-height: 1.6;
 		letter-spacing: normal;
 		text-align: left;
 		background-color: var(--color-resume-background);
-		box-shadow: var(--image-shadow), inset 0 0 0 1px var(--color-line);
+		box-shadow:
+			var(--image-shadow),
+			inset 0 0 0 1px var(--color-line);
 		opacity: 0;
 	}
 
