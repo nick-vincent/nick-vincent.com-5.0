@@ -10,7 +10,7 @@ function loadFiles(dir) {
 		case 'photos':
 			thumbFiles = import.meta.glob('../../img/photos/*.jpg', {
 				eager: true,
-				query: { format: 'webp', w: 280, h: 280, as: 'meta' }
+				query: { format: 'webp', w: 360, h: 360, as: 'meta' }
 			});
 			imageFiles = import.meta.glob('../../img/photos/*.jpg', {
 				eager: true,
@@ -24,7 +24,7 @@ function loadFiles(dir) {
 		case 'faces':
 			thumbFiles = import.meta.glob('../../img/faces/*.png', {
 				eager: true,
-				query: { format: 'webp', w: 280, h: 280, as: 'meta' }
+				query: { format: 'webp', w: 360, h: 360, as: 'meta' }
 			});
 			imageFiles = import.meta.glob('../../img/faces/*.png', {
 				eager: true,
