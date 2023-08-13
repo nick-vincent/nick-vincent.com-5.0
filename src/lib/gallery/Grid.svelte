@@ -31,4 +31,10 @@
 		height: auto;
 		aspect-ratio: 1;
 	}
+
+	@media (min-width: 720px) {
+		ul {
+			grid-template-columns: repeat(auto-fill, minmax(7rem, 1fr));
+		}
+	}
 </style>

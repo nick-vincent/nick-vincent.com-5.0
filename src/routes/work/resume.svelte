@@ -206,9 +206,9 @@
 <style>
 	article {
 		display: grid;
-		gap: 2.25em;
+		gap: 2.5em;
 		max-width: calc(100vw - 2rem);
-		padding: 2.5rem 1.5rem;
+		padding: 3rem 2rem;
 		font-size: 16px;
 		line-height: 1.6;
 		letter-spacing: normal;
@@ -233,7 +233,9 @@
 
 	main {
 		display: grid;
+		padding: 0;
 		gap: 3em;
+		margin: 0;
 	}
 
 	header {
@@ -248,14 +250,14 @@
 	#education,
 	#experience {
 		display: grid;
-		gap: 2.25em;
+		gap: 2.5em;
 		align-content: start;
 	}
 
 	.column {
 		display: grid;
 		align-items: start;
-		gap: 2.25em;
+		gap: 2.5em;
 	}
 
 	header p {
@@ -277,8 +279,8 @@
 		font-size: calc(14em / 16);
 		font-weight: 600;
 		line-height: 1;
-		border-top: 0.05em solid var(--color-resume-text);
-		border-bottom: 0.05em solid var(--color-resume-text);
+		border-top: 1px solid var(--color-resume-text);
+		border-bottom: 1px solid var(--color-resume-text);
 		padding: 0.5rem;
 		margin: 0;
 	}
@@ -325,7 +327,7 @@
 		header {
 			display: grid;
 			grid-template-columns: repeat(2, 1fr);
-			column-gap: 2.25em;
+			column-gap: 2.5em;
 		}
 
 		header h1 {
@@ -341,14 +343,15 @@
 			display: grid;
 			grid-template-columns: repeat(2, 1fr);
 			grid-auto-rows: 1em;
-			gap: 2.25em;
+			gap: 2.5em;
+			margin: 0;
 		}
 
 		#experience {
 			display: grid;
 			grid-template-columns: 1fr;
 			align-items: start;
-			gap: 2.25em;
+			gap: 2.5em;
 
 			grid-row-start: 1;
 			grid-column-start: 2;
@@ -374,7 +377,7 @@
 			display: grid;
 			grid-template-columns: repeat(3, 1fr);
 			grid-auto-rows: 1em;
-			gap: 2.25em;
+			gap: 2.5em;
 		}
 
 		#expertise {
@@ -391,7 +394,7 @@
 			display: grid;
 			grid-template-columns: repeat(2, 1fr);
 			align-items: start;
-			gap: 2.25em;
+			gap: 2.5em;
 
 			grid-row-start: 1;
 			grid-column-start: 2;

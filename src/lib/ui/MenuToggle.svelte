@@ -1,5 +1,10 @@
 <script>
 	export let open = false;
+
+	const onClick = () => {
+		open = !open;
+		window.scrollTo(0, 0);
+	};
 </script>
 
 <a
@@ -8,7 +13,7 @@
 	aria-haspopup="true"
 	aria-controls="navigation"
 	aria-expanded={open ? 'true' : 'false'}
-	on:click|preventDefault={() => (open = !open)}
+	on:click|preventDefault={onClick}
 >
 	<span class="visually-hidden">
 		{#if open}
@@ -35,13 +40,15 @@
 		appearance: none;
 		left: 0;
 		top: 0;
-		width: 18px;
-		height: 18px;
+		width: 3rem;
+		height: 3rem;
 		border: none;
 		border-radius: 0;
 		background: none;
 		opacity: 0.65;
-		transition: var(--transition-dom-x-ray), opacity 200ms var(--easing-standard);
+		transition:
+			var(--transition-dom-x-ray),
+			opacity 200ms var(--easing-standard);
 	}
 
 	a:active {
@@ -49,15 +56,7 @@
 	}
 
 	a::before {
-		inset: -0.5em;
-	}
-
-	a::after {
-		content: '';
-		display: block;
-		position: absolute;
-		inset: -0.5em;
-		border-radius: 0.5em;
+		inset: 0;
 	}
 
 	a:focus {
@@ -68,6 +67,12 @@
 		a:hover {
 			opacity: 1;
 		}
+	}
+
+	.hamburger {
+		display: block;
+		position: absolute;
+		inset: 1rem;
 	}
 
 	.top,
@@ -85,14 +90,15 @@
 	}
 
 	.top {
-		transform: translateY(-6px);
+		transform: translateY(calc(-0.5rem + 3px));
 	}
 	.bottom {
-		transform: translateY(6px);
+		transform: translateY(calc(0.5rem - 3px));
 	}
 	.top,
 	.bottom {
-		transition: var(--transition-dom-x-ray),
+		transition:
+			var(--transition-dom-x-ray),
 			transform var(--duration-menu) var(--easing-decelerate) var(--duration-menu),
 			opacity 0ms var(--duration-menu);
 	}
@@ -100,13 +106,17 @@
 	[aria-expanded='true'] .bottom {
 		opacity: 0;
 		transform: translateY(0);
-		transition: var(--transition-dom-x-ray), transform var(--duration-menu) var(--easing-accelerate),
+		transition:
+			var(--transition-dom-x-ray),
+			transform var(--duration-menu) var(--easing-accelerate),
 			opacity 0ms var(--duration-menu);
 	}
 
 	.clockwise,
 	.counterwise {
-		transition: var(--transition-dom-x-ray), transform var(--duration-menu) var(--easing-accelerate),
+		transition:
+			var(--transition-dom-x-ray),
+			transform var(--duration-menu) var(--easing-accelerate),
 			opacity 0ms var(--duration-menu);
 	}
 	.clockwise {
@@ -115,7 +125,8 @@
 	[aria-expanded='true'] .clockwise,
 	[aria-expanded='true'] .counterwise {
 		opacity: 1;
-		transition: var(--transition-dom-x-ray),
+		transition:
+			var(--transition-dom-x-ray),
 			transform var(--duration-menu) var(--easing-decelerate) var(--duration-menu),
 			opacity 0ms var(--duration-menu);
 	}

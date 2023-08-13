@@ -35,18 +35,3 @@
 		>
 	</p>
 </footer>
-
-<style>
-	main {
-		flex: 1;
-		padding: 6rem 0 4rem;
-		text-align: left;
-	}
-
-	footer {
-		padding: 1rem 0 1rem 0;
-		text-align: center;
-		font-size: 0.75rem;
-		border-top: 0.05rem solid var(--color-line);
-	}
-</style>

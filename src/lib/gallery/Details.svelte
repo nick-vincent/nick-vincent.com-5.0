@@ -45,11 +45,6 @@
 		font-weight: 500;
 	}
 
-	.caption {
-		font-size: 0.9rem;
-		letter-spacing: -0.01em;
-	}
-
 	ul {
 		font-size: 0.75rem;
 		line-height: 1rem;

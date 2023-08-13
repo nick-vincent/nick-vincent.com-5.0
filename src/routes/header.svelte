@@ -7,10 +7,6 @@
 
 	export let open = false;
 
-	const durationIn = 1000;
-	const durationOut = 250;
-	const delay = 100;
-
 	const navItems = [
 		{ text: 'Work', href: '/work/' },
 		{ text: 'Tunes', href: '/tunes/' },
@@ -20,11 +16,8 @@
 	];
 
 	let width;
-	let scrollPos;
 
-	$: scrolled = scrollPos > 0;
-	$: overlay = scrolled || open;
-	$: border = !scrolled || open;
+	$: overlay = open;
 
 	$: if (width >= 640) open = false;
 
@@ -33,10 +26,8 @@
 	}
 </script>
 
-<svelte:window bind:scrollY={scrollPos} />
-
 <header class:overlay class:open bind:clientWidth={width}>
-	<nav class:border>
+	<nav>
 		<div id="menu">
 			<MenuToggle bind:open />
 		</div>
@@ -66,7 +57,7 @@
 <style>
 	header {
 		z-index: 2;
-		position: fixed;
+		position: absolute;
 		left: 0;
 		right: 0;
 		top: 0;
@@ -91,7 +82,6 @@
 		z-index: -2;
 		opacity: 0;
 		box-shadow: var(--image-shadow);
-		border-bottom: 0.05rem solid var(--color-line);
 		transition: opacity 500ms var(--easing-standard);
 	}
 
@@ -114,19 +104,13 @@
 	nav {
 		display: flex;
 		gap: 1rem;
-		flex-wrap: wrap;
+		flex-wrap: nowrap;
 		justify-content: space-between;
 		align-items: center;
 		max-width: 50rem;
 		padding: 0 0 1rem;
 		margin: 0 auto;
-		border-bottom: 0.05rem solid transparent;
-		transition:
-			var(--transition-dom-x-ray),
-			border-bottom var(--duration-menu) ease-in-out;
-	}
-	nav.border {
-		border-bottom: 0.05rem solid var(--color-line);
+		border-bottom: 2px solid var(--color-line);
 	}
 
 	ul {
@@ -164,7 +148,7 @@
 	#home {
 		z-index: 2;
 		text-align: center;
-		font-size: 1rem;
+		font-size: 1.25rem;
 		line-height: 1;
 	}
 
@@ -180,21 +164,28 @@
 		color: var(--color-h1);
 	}
 
-	@media (min-width: 640px) {
+	@media (min-width: 860px) {
+		header {
+			padding: 2rem 2rem 0;
+		}
+
 		#menu {
 			display: none;
 		}
 
 		#theme {
 			order: 3;
+			margin-left: auto;
 		}
 
 		#home {
-			margin-right: auto;
+			font-size: 1.5rem;
 		}
 
 		nav {
-			justify-content: flex-end;
+			padding: 0 0 0.5rem;
+			justify-content: flex-start;
+			align-items: baseline;
 		}
 
 		ul {
@@ -203,19 +194,23 @@
 			visibility: visible;
 			display: flex;
 			flex-direction: row;
-			justify-content: flex-end;
+			justify-content: flex-start;
 			gap: 1rem;
 			padding: 0;
 			margin: 0;
-			font-size: 0.75rem;
+			font-size: 1rem;
 			line-height: 1;
-			font-weight: 500;
+			font-weight: 400;
 			list-style: none;
 		}
 
 		li {
 			opacity: 1;
 			visibility: visible;
+		}
+
+		a {
+			font-weight: 500;
 		}
 	}
 </style>

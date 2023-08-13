@@ -29,11 +29,11 @@
 		transform: translate(-50%, -50%);
 	}
 	.spinner::before {
-		border: 0.1rem solid var(--color-line);
+		border: 2px solid var(--color-line);
 	}
 	.spinner::after {
-		border: 0.1rem solid transparent;
-		border-top: 0.1rem solid var(--color-line);
+		border: 2px solid transparent;
+		border-top: 2px solid var(--color-line);
 		animation: spinner 1s infinite;
 	}
 

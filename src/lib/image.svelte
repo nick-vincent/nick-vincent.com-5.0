@@ -65,7 +65,7 @@
 		display: block;
 		inset: 0;
 		border-radius: var(--border-radius);
-		box-shadow: inset 0 0 0 1px var(--color-line);
+		box-shadow: inset 0 0 0 2px var(--color-line);
 	}
 
 	img {

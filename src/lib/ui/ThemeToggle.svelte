@@ -54,13 +54,16 @@
 		appearance: none;
 		position: relative;
 		display: block;
-		width: 18px;
-		height: 18px;
+		width: 3rem;
+		height: 3rem;
+		padding: 1rem;
 		border: none;
 		border-radius: 50%;
 		background: none;
 		opacity: 0.75;
-		transition: var(--transition-dom-x-ray), opacity 200ms var(--easing-standard);
+		transition:
+			var(--transition-dom-x-ray),
+			opacity 200ms var(--easing-standard);
 	}
 
 	button:active {
@@ -72,15 +75,7 @@
 	}
 
 	button::before {
-		inset: -0.5em;
-	}
-
-	button::after {
-		content: '';
-		display: block;
-		position: absolute;
-		inset: -0.5em;
-		border-radius: 0.5em;
+		inset: 0;
 	}
 
 	@media (hover: hover) {
@@ -92,8 +87,8 @@
 	.circle {
 		display: block;
 		overflow: hidden;
-		width: 18px;
-		height: 18px;
+		width: 1rem;
+		height: 1rem;
 		border: 2px solid var(--color-ui);
 		border-radius: 50%;
 	}

@@ -23,10 +23,13 @@ button::before {
 	inset: -0.5em;
 	background: var(--color-focus-highlight);
 	border-radius: 0.5em;
-	border: 0.05rem solid var(--color-focus-highlight);
+	border: 1px solid var(--color-focus-highlight);
 	scale: 0;
 	opacity: 0;
-	transition: var(--transition-dom-x-ray), scale 150ms ease, opacity 150ms ease;
+	transition:
+		var(--transition-dom-x-ray),
+		scale 150ms ease,
+		opacity 150ms ease;
 }
 a:focus-visible:before,
 button:focus-visible:before {
@@ -43,7 +46,8 @@ button:focus-visible:before {
 	font-weight: 400;
 	opacity: 0;
 	transform: translateX(-0.15em);
-	transition: var(--transition-dom-x-ray),
+	transition:
+		var(--transition-dom-x-ray),
 		opacity var(--duration-arrow-out) var(--easing-accelerate),
 		transform var(--duration-arrow-out) var(--easing-arrow-out);
 }
@@ -52,7 +56,8 @@ button:focus-visible:before {
 	.arrow-link:hover::after {
 		opacity: 1;
 		transform: translateX(0.15em);
-		transition: var(--transition-dom-x-ray),
+		transition:
+			var(--transition-dom-x-ray),
 			opacity var(--duration-arrow-in) var(--easing-decelerate),
 			transform var(--duration-arrow-in) var(--easing-arrow-in);
 	}
