@@ -10,7 +10,11 @@
 	$: slug = pathParts[2];
 
 	afterNavigate(() => {
-		if (slug) anchor.scrollIntoView();
+		if (slug) {
+			anchor.scrollIntoView();
+		} else {
+			window.scrollTo(0,0);
+		}
 	});
 </script>
 
