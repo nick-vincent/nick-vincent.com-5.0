@@ -3,6 +3,14 @@
 	import Portrait from '../img/nick-vincent.jpg?format=webp&w=680&h=680&as=meta';
 </script>
 
+<svelte:head>
+	<title>Nick Vincent</title>
+	<meta
+		name="description"
+		content="Personal website of Nick Vincent featuring work, tunes, faces, & photos."
+	/>
+</svelte:head>
+
 <h1 class="visually-hidden">Nick Vincent</h1>
 <div class="image">
 	<Image src={Portrait.src} alt="Portrait of Nick Vincent" aspect="1" radius="50%" />

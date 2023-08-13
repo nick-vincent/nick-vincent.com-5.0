@@ -1,3 +1,11 @@
+<svelte:head>
+	<title>Nick Vincent → Tunes</title>
+	<meta
+		name="description"
+		content="Some music projects of mine."
+	/>
+</svelte:head>
+
 <div class="intro">
 	<h1>Tunes</h1>
 	<p>Some music projects of mine.</p>
