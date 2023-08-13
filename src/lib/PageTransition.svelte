@@ -34,7 +34,7 @@
 		grid-template-rows: 1fr;
 		grid-template-columns: 1fr;
 	}
-	.grid > div {
+	.page {
 		grid-row: 1;
 		grid-column: 1;
 	}

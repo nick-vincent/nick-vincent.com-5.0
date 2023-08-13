@@ -17,8 +17,6 @@
 
 	let width;
 
-	$: overlay = open;
-
 	$: if (width >= 640) open = false;
 
 	$: if (browser) {
@@ -26,7 +24,7 @@
 	}
 </script>
 
-<header class:overlay class:open bind:clientWidth={width}>
+<header class:open bind:clientWidth={width}>
 	<nav>
 		<div id="menu">
 			<MenuToggle bind:open />
@@ -89,7 +87,7 @@
 	header::before {
 		background-image: var(--light-body-gradient);
 	}
-	header.overlay::before {
+	header.open::before {
 		opacity: var(--light-body-gradient-opacity);
 	}
 
@@ -97,7 +95,7 @@
 	header::after {
 		background-image: var(--dark-body-gradient);
 	}
-	header.overlay::after {
+	header.open::after {
 		opacity: var(--dark-body-gradient-opacity);
 	}
 
@@ -160,7 +158,7 @@
 			var(--transition-dom-x-ray),
 			text-shadow 500ms var(--easing-sharp);
 	}
-	header.overlay a {
+	header.open a {
 		color: var(--color-h1);
 	}
 
