@@ -61,7 +61,7 @@
 		will-change: transform;
 		backface-visibility: hidden;
 		transform-style: preserve-3d;
-		transform: perspective(10em) scale(var(--scale)) rotateY(var(--rotateY)) rotateX(var(--rotateX));
+		transform: perspective(14em) scale(var(--scale)) rotateY(var(--rotateY)) rotateX(var(--rotateX));
 		transition:
 			var(--transition-dom-x-ray),
 			box-shadow 150ms ease-in,

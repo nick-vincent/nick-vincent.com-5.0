@@ -46,7 +46,7 @@
 		position: relative;
 		display: flex;
 		flex-wrap: wrap;
-		gap: 1rem;
+		gap: 1.5rem;
 	}
 
 	.image {
@@ -62,6 +62,6 @@
 
 	.details {
 		order: 2;
-		width: 16rem;
+		width: 16rem;	
 	}
 </style>
