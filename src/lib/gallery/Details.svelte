@@ -19,9 +19,9 @@
 {#if caption}<p class="caption">{caption}</p>{/if}
 {#if showUI}
 	<ul class="inline">
-		{#if feedUrl}
+		<!-- {#if feedUrl}
 			<li><FeedLink url={feedUrl} /></li>
-		{/if}
+		{/if} -->
 		{#if id}
 			<li><InstagramLink url={instagramUrl} /></li>
 		{/if}
