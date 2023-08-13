@@ -1,6 +1,7 @@
 <script>
+	import { navigating } from '$app/stores';
 	import { afterNavigate } from '$app/navigation';
-	import PageTransition from '$lib/PageTransition.svelte';
+	import SubPageTransition from '$lib/SubPageTransition.svelte';
 
 	export let data;
 
@@ -10,10 +11,10 @@
 	$: slug = pathParts[2];
 
 	afterNavigate(() => {
-		if (slug) {
+		if ($navigating.to.params.slug && anchor) {
 			anchor.scrollIntoView();
 		} else {
-			window.scrollTo(0,0);
+			window.scrollTo(0, 0);
 		}
 	});
 </script>
@@ -24,6 +25,6 @@
 	<div bind:this={anchor}></div>
 </div>
 
-<PageTransition key={slug}>
+<SubPageTransition key={slug}>
 	<slot />
-</PageTransition>
+</SubPageTransition>

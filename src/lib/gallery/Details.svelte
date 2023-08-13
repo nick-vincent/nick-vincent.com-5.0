@@ -26,10 +26,10 @@
 			<li><InstagramLink url={instagramUrl} /></li>
 		{/if}
 		{#if prevImage}
-			<li><a href={prevImage.url}>Prev</a></li>
+			<li><a data-sveltekit-noscroll href={prevImage.url}>Prev</a></li>
 		{/if}
 		{#if nextImage}
-			<li><a href={nextImage.url}>Next</a></li>
+			<li><a data-sveltekit-noscroll href={nextImage.url}>Next</a></li>
 		{/if}
 		{#if backUrl}
 			<li><a href={backUrl}>See all</a></li>
