@@ -1,5 +1,6 @@
 <script>
 	export let url;
+	export let text = 'Instagram';
 </script>
 
 <a href={url} rel="external noreferrer" target="_blank">
@@ -9,29 +10,21 @@
 			transform="translate(-2.5 -2.5)"
 		/></svg
 	>
-	<span class="visually-hidden">View on Instagram</span>
+	<span class="visually-hidden">{text}</span>
 </a>
 
 <style>
 	a {
-		font-size: 0.75rem;
-		line-height: 1rem;
-		display: inline-block;
+		display: block;
 	}
 	a::before {
 		inset: -0.5em;
 	}
 	svg {
-		display: inline-block;
-		width: 1rem;
-		vertical-align: middle;
+		display: block;
+		width: 1.5rem;
 	}
 	path {
 		fill: var(--color-link);
-	}
-	span {
-		display: inline-block;
-		font-size: 0.75rem;
-		line-height: 1rem;
 	}
 </style>

@@ -23,7 +23,7 @@
 			<li><FeedLink url={feedUrl} /></li>
 		{/if} -->
 		{#if id}
-			<li><InstagramLink url={instagramUrl} /></li>
+			<li><InstagramLink url={instagramUrl} text="View on Instagram" /></li>
 		{/if}
 		{#if prevImage}
 			<li><a data-sveltekit-noscroll href={prevImage.url}>Prev</a></li>
@@ -43,11 +43,5 @@
 		letter-spacing: 0.25em;
 		font-size: 0.75rem;
 		font-weight: 500;
-	}
-
-	ul {
-		font-size: 0.75rem;
-		line-height: 1rem;
-		margin: 1.5rem 0 0;
 	}
 </style>

@@ -60,15 +60,16 @@ ul.bullet li::before {
 }
 
 ul.inline {
-	display: flex;
+	display: block;
 }
 ul.inline li {
 	display: inline-block;
+	vertical-align: middle;
 }
 ul.inline li:not(:first-child) {
 	border-left: 2px solid var(--color-line);
-	margin-left: 0.75rem;
-	padding-left: 0.75rem;
+	margin-left: 0.5rem;
+	padding-left: 0.5rem;
 }
 
 hr {
