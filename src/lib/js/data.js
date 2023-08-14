@@ -14,7 +14,7 @@ function loadFiles(dir) {
 			});
 			imageFiles = import.meta.glob('../../img/photos/*.jpg', {
 				eager: true,
-				query: { format: 'webp', w: 1920, h: 1200, quality: 100, fit: 'inside', as: 'meta' }
+				query: { format: 'webp', w: 2400, h: 1800, quality: 100, fit: 'inside', as: 'meta' }
 			});
 			// feedFiles = import.meta.glob('../../img/photos/*.jpg', {
 			// 	eager: true,
@@ -28,7 +28,7 @@ function loadFiles(dir) {
 			});
 			imageFiles = import.meta.glob('../../img/faces/*.png', {
 				eager: true,
-				query: { format: 'webp', w: 1920, h: 1200, quality: 100, fit: 'inside', as: 'meta' }
+				query: { format: 'webp', w: 2400, h: 1800, quality: 100, fit: 'inside', as: 'meta' }
 			});
 			// feedFiles = import.meta.glob('../../img/faces/*.png', {
 			// 	eager: true,

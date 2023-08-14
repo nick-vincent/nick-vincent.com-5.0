@@ -37,31 +37,33 @@
 		<Details {dir} {image} {prevImage} {nextImage} />
 	</div>
 	<div class="image">
-		<Image {src} alt={title} {aspect} radius="1rem" delay="500ms" />
+		<Image {src} alt={title} {aspect} radius="1.5rem" delay="500ms" />
 	</div>
 </div>
 
 <style>
 	.lightbox {
 		position: relative;
-		display: flex;
-		flex-wrap: wrap;
+		display: grid;
+		grid-template-columns: 1fr;
 		gap: 1.5rem;
 	}
 
 	.image {
 		order: 1;
 		width: 100%;
-		border-radius: 1rem;
-		max-width: 24.5rem;
+		border-radius: 1.5rem;
 		box-shadow: var(--image-shadow);
-	}
-	.landscape .image {
-		max-width: 32em;
 	}
 
 	.details {
 		order: 2;
-		width: 16rem;	
+		max-width: 18rem;
+	}
+
+	@media (min-width: 1100px) {
+		.lightbox {
+			grid-template-columns: 2fr 1fr;
+		}
 	}
 </style>
