@@ -14,13 +14,13 @@
 <div class="grid">
 	<div class="right">
 		<h1 class="">Nick</h1>
-		<p>is known for:</p>
+		<p>is known to:</p>
 		<ul class="bullet">
-			<li><a href="/work/">pushing pixels</a></li>
-			<li><a href="/tunes/">strumming tunes</a></li>
-			<li><a href="/faces/">making faces</a></li>
-			<li><a href="/photos/">snapping photos</a></li>
-			<!-- <li><a href="/contact/">listening to laments</a></li> -->
+			<li><a href="/work/">push pixels</a></li>
+			<li><a href="/tunes/">strum tunes</a></li>
+			<li><a href="/faces/">make faces</a></li>
+			<li><a href="/photos/">snap photos</a></li>
+			<li><a href="/contact/">reply promptly</a></li>
 		</ul>
 	</div>
 	<div class="left">
@@ -54,6 +54,10 @@
 
 	.right {
 		order: 2;
+	}
+
+	p {
+		margin-top: 0.5rem;
 	}
 
 	@media (min-width: 860px) {

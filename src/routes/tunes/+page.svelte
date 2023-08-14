@@ -76,7 +76,7 @@
 		box-shadow: var(--image-shadow);
 	}
 
-	@media (min-width: 1024px) {
+	@media (min-width: 860px) {
 		.row {
 			grid-template-columns: 2fr 1fr;
 		}

@@ -1,5 +1,5 @@
 <footer>
-	<ul class="inline">
+	<ul>
 		<li><a href="/">Home</a></li>
 		<li><a href="/work/">Work</a></li>
 		<li><a href="/tunes/">Tunes</a></li>
@@ -8,23 +8,30 @@
 		<li><a href="/contact/">Contact</a></li>
 	</ul>
 	<p>
-		Built with ❤️ with <a href="https://svelte.dev" rel="external noreferrer" target="_blank"
-			>Svelte</a
-		>
+		Built with <a href="https://svelte.dev" rel="external noreferrer" target="_blank">Svelte</a>
 	</p>
 </footer>
 
 <style>
 	footer {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		padding: 1rem 0;
+		padding: 2rem 0 3rem;
+		text-align: center;
 	}
 
-	p,
-	ul,
-	li {
-		/* margin: 0 !important; */
+	@media (min-width: 860px) {
+		ul {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 1rem;
+		}
+
+		footer {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 2rem;
+			padding: 0.25rem 0 3rem;
+		}
 	}
 </style>
