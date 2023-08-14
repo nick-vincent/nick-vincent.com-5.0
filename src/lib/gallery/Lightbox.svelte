@@ -62,7 +62,7 @@
 	}
 
 	@media (min-width: 1100px) {
-		.lightbox {
+		.lightbox:not(.landscape) {
 			grid-template-columns: 2fr 1fr;
 		}
 	}
