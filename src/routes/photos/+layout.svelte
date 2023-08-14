@@ -11,10 +11,12 @@
 	$: slug = pathParts[2];
 
 	afterNavigate(() => {
-		if ($navigating.to.params.slug && anchor) {
-			anchor.scrollIntoView();
-		} else {
-			window.scrollTo(0, 0);
+		if ($navigating) {
+			if ($navigating.to.params.slug && anchor) {
+				anchor.scrollIntoView();
+			} else {
+				window.scrollTo(0, 0);
+			}
 		}
 	});
 </script>
