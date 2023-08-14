@@ -1,13 +1,14 @@
 :root {
 	/* light mode vars */
-	--light-html-gradient-opacity: 0.6;
-	--light-color-background: rgba(255, 255, 255, 0.9);
+	--light-html-gradient-opacity: 0.5;
+	--light-color-background: rgba(255, 255, 255, 0.85);
+	--light-color-nav-background: rgba(255, 255, 255, 0.5);
 	--light-color-ui: rgba(0, 0, 0, 0.75);
 	--light-color-ui-invert: rgba(255, 255, 255, 0.75);
 	--light-color-text: rgba(0, 0, 0, 0.65);
 	--light-color-h1: rgba(0, 0, 0, 0.75);
 	--light-color-h2: rgba(0, 0, 0, 0.7);
-	--light-color-link: rgba(60, 120, 180, 0.8);
+	--light-color-link: rgba(80, 120, 180, 0.85);
 	--light-color-date: rgba(0, 0, 0, 0.4);
 	--light-color-line: rgba(0, 0, 0, 0.1);
 	--light-color-bullet: rgba(0, 0, 0, 0.2);
@@ -19,13 +20,14 @@
 	--light-header-text-shadow: rgba(255, 255, 255, 0.25) 1px 1px 0;
 	--light-body-gradient: radial-gradient(
 		circle at center top,
-		rgba(255, 255, 255, 0.9) 0,
+		rgba(255, 255, 255, 0.5) 0,
 		rgba(255, 255, 255, 0) 100vh
 	);
 
 	/* dark mode vars */
 	--dark-html-gradient-opacity: 0.25;
 	--dark-color-background: rgba(0, 0, 0, 0.9);
+	--dark-color-nav-background: rgba(0, 0, 0, 0.5);
 	--dark-color-ui: rgba(255, 255, 255, 0.75);
 	--dark-color-ui-invert: rgba(0, 0, 0, 0.75);
 	--dark-color-text: rgba(255, 255, 255, 0.65);
@@ -56,6 +58,7 @@
 	);
 	--html-gradient-opacity: var(--light-html-gradient-opacity);
 	--color-background: var(--light-color-background);
+	--color-nav-background: var(--light-color-nav-background);
 	--color-ui: var(--light-color-ui);
 	--color-ui-invert: var(--light-color-ui-invert);
 	--color-text: var(--light-color-text);
@@ -83,6 +86,7 @@
 	:root {
 		--html-gradient-opacity: var(--dark-html-gradient-opacity);
 		--color-background: var(--dark-color-background);
+		--color-nav-background: var(--dark-color-nav-background);
 		--color-ui: var(--dark-color-ui);
 		--color-ui-invert: var(--dark-color-ui-invert);
 		--color-text: var(--dark-color-text);
@@ -126,6 +130,7 @@
 .light {
 	--html-gradient-opacity: var(--light-html-gradient-opacity);
 	--color-background: var(--light-color-background);
+	--color-nav-background: var(--light-color-nav-background);
 	--color-ui: var(--light-color-ui);
 	--color-ui-invert: var(--light-color-ui-invert);
 	--color-text: var(--light-color-text);
@@ -148,6 +153,7 @@
 .dark {
 	--html-gradient-opacity: var(--dark-html-gradient-opacity);
 	--color-background: var(--dark-color-background);
+	--color-nav-background: var(--dark-color-nav-background);
 	--color-ui: var(--dark-color-ui);
 	--color-ui-invert: var(--dark-color-ui-invert);
 	--color-text: var(--dark-color-text);
@@ -170,7 +176,7 @@
 *,
 *::after,
 *::before {
-	-webkit-tap-highlight-color: transparent;
+	-webkit-tap-highlight-color: var(--color-focus-highlight);
 }
 
 html {

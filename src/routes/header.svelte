@@ -79,12 +79,12 @@
 		inset: 0;
 		z-index: -2;
 		opacity: 0;
-		box-shadow: var(--image-shadow);
 		transition: opacity 500ms var(--easing-standard);
 	}
 
 	/* light mode */
 	header::before {
+		background-color: var(--color-nav-background);
 		background-image: var(--light-body-gradient);
 	}
 	header.open::before {
@@ -93,6 +93,7 @@
 
 	/* dark mode */
 	header::after {
+		background-color: var(--color-nav-background);
 		background-image: var(--dark-body-gradient);
 	}
 	header.open::after {
