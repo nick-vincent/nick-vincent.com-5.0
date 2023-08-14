@@ -60,6 +60,7 @@
 		background-color: var(--color-image-background);
 	}
 	.wrapper::after {
+		pointer-events: none;
 		content: '';
 		position: absolute;
 		display: block;
@@ -75,7 +76,7 @@
 		will-change: opacity;
 		opacity: 0;
 		transition:
-			var(--transition-dom-x-ray),
+			var(--transition-theme),
 			opacity 500ms ease-in-out var(--delay);
 	}
 	.loaded img,

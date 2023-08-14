@@ -156,7 +156,7 @@
 		text-decoration: none;
 		text-shadow: var(--header-text-shadow);
 		transition:
-			var(--transition-dom-x-ray),
+			var(--transition-theme),
 			text-shadow 500ms var(--easing-sharp);
 	}
 	header.open a {

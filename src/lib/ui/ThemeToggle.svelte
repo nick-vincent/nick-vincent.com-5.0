@@ -62,7 +62,7 @@
 		background: none;
 		opacity: 0.75;
 		transition:
-			var(--transition-dom-x-ray),
+			var(--transition-theme),
 			opacity 200ms var(--easing-standard);
 	}
 
@@ -91,6 +91,9 @@
 		height: 1rem;
 		border: 2px solid var(--color-ui);
 		border-radius: 50%;
+		transition:
+			var(--transition-theme),
+			transform 1s var(--easing-standard);
 	}
 
 	:global(html.light) .circle {

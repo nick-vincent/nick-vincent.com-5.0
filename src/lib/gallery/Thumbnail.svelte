@@ -63,7 +63,7 @@
 		transform-style: preserve-3d;
 		transform: perspective(14em) scale(var(--scale)) rotateY(var(--rotateY)) rotateX(var(--rotateX));
 		transition:
-			var(--transition-dom-x-ray),
+			var(--transition-theme),
 			box-shadow 150ms ease-in,
 			transform 150ms ease-in;
 	}
@@ -81,7 +81,7 @@
 		background-image: radial-gradient(circle closest-side, white, transparent);
 		background-repeat: no-repeat;
 		transition:
-			var(--transition-dom-x-ray),
+			var(--transition-theme),
 			transform 150ms ease-in,
 			opacity 150ms ease-in;
 		transform: translateX(calc(var(--mouseX) * 1px)) translateY(calc(var(--mouseY) * -1px));
@@ -92,14 +92,14 @@
 		z-index: 2;
 		box-shadow: var(--image-shadow-focus);
 		transition:
-			var(--transition-dom-x-ray),
+			var(--transition-theme),
 			box-shadow 150ms ease-out,
 			transform 150ms ease-out;
 	}
 	a:focus .shine {
 		opacity: 0.1;
 		transition:
-			var(--transition-dom-x-ray),
+			var(--transition-theme),
 			transform 150ms ease-out,
 			opacity 150ms ease-out;
 	}
@@ -110,14 +110,14 @@
 			z-index: 2;
 			box-shadow: var(--image-shadow-focus);
 			transition:
-				var(--transition-dom-x-ray),
+				var(--transition-theme),
 				box-shadow 150ms ease-out,
 				transform 150ms ease-out;
 		}
 		a:hover .shine {
 			opacity: 0.2;
 			transition:
-				var(--transition-dom-x-ray),
+				var(--transition-theme),
 				transform 150ms ease-out,
 				opacity 150ms ease-out;
 		}

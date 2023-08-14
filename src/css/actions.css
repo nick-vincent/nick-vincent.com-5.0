@@ -27,7 +27,7 @@ button::before {
 	scale: 0;
 	opacity: 0;
 	transition:
-		var(--transition-dom-x-ray),
+		var(--transition-theme),
 		scale 150ms ease,
 		opacity 150ms ease;
 }
@@ -47,7 +47,7 @@ button:focus-visible:before {
 	opacity: 0;
 	transform: translateX(-0.15em);
 	transition:
-		var(--transition-dom-x-ray),
+		var(--transition-theme),
 		opacity var(--duration-arrow-out) var(--easing-accelerate),
 		transform var(--duration-arrow-out) var(--easing-arrow-out);
 }
@@ -57,7 +57,7 @@ button:focus-visible:before {
 		opacity: 1;
 		transform: translateX(0.15em);
 		transition:
-			var(--transition-dom-x-ray),
+			var(--transition-theme),
 			opacity var(--duration-arrow-in) var(--easing-decelerate),
 			transform var(--duration-arrow-in) var(--easing-arrow-in);
 	}

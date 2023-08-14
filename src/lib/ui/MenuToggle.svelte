@@ -47,7 +47,7 @@
 		background: none;
 		opacity: 0.65;
 		transition:
-			var(--transition-dom-x-ray),
+			var(--transition-theme),
 			opacity 200ms var(--easing-standard);
 	}
 
@@ -98,7 +98,7 @@
 	.top,
 	.bottom {
 		transition:
-			var(--transition-dom-x-ray),
+			var(--transition-theme),
 			transform var(--duration-menu) var(--easing-decelerate) var(--duration-menu),
 			opacity 0ms var(--duration-menu);
 	}
@@ -107,7 +107,7 @@
 		opacity: 0;
 		transform: translateY(0);
 		transition:
-			var(--transition-dom-x-ray),
+			var(--transition-theme),
 			transform var(--duration-menu) var(--easing-accelerate),
 			opacity 0ms var(--duration-menu);
 	}
@@ -115,7 +115,7 @@
 	.clockwise,
 	.counterwise {
 		transition:
-			var(--transition-dom-x-ray),
+			var(--transition-theme),
 			transform var(--duration-menu) var(--easing-accelerate),
 			opacity 0ms var(--duration-menu);
 	}
@@ -126,7 +126,7 @@
 	[aria-expanded='true'] .counterwise {
 		opacity: 1;
 		transition:
-			var(--transition-dom-x-ray),
+			var(--transition-theme),
 			transform var(--duration-menu) var(--easing-decelerate) var(--duration-menu),
 			opacity 0ms var(--duration-menu);
 	}

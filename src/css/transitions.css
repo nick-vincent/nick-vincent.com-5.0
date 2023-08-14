@@ -6,17 +6,16 @@
 
 	--duration-menu: 150ms;
 
-	--transition-dom-x-ray: color 1s var(--easing-standard), border-color 1s var(--easing-standard),
+	--transition-theme: color 1s var(--easing-standard), border-color 1s var(--easing-standard),
 		background-color 1s var(--easing-standard), outline-color 1s var(--easing-standard),
 		box-shadow 1s var(--easing-standard), opacity 1s var(--easing-standard),
-		visibility 1s var(--easing-standard), filter 1s var(--easing-standard),
-		transform 1s var(--easing-standard), fill 1s var(--easing-standard);
+		fill 1s var(--easing-standard);
 }
 
 *,
 *::after,
 *::before {
-	transition: var(--transition-dom-x-ray);
+	transition: var(--transition-theme);
 	scroll-behavior: smooth;
 }
 
