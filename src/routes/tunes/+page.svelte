@@ -1,14 +1,11 @@
 <svelte:head>
 	<title>Nick Vincent → Tunes</title>
-	<meta
-		name="description"
-		content="Some music projects of mine."
-	/>
+	<meta name="description" content="Some musical endeavors of mine." />
 </svelte:head>
 
 <div class="intro">
 	<h1>Tunes</h1>
-	<p>Some music projects of mine.</p>
+	<p>Some musical endeavors of mine.</p>
 </div>
 
 <div class="grid">
@@ -28,7 +25,6 @@
 				allowfullscreen
 			/>
 		</div>
-
 	</div>
 	<div class="row">
 		<div class="details">
@@ -55,7 +51,7 @@
 		grid-template-columns: 1fr;
 		gap: 3rem;
 	}
-	
+
 	.row {
 		display: grid;
 		grid-template-columns: 1fr;
@@ -64,23 +60,23 @@
 	}
 
 	.details {
-		order: 2
+		order: 2;
 	}
 
 	.video {
-		order: 1
+		order: 1;
 	}
 
 	iframe {
 		width: 100%;
 		height: auto;
 		aspect-ratio: 16 / 9;
-		border-radius: 0.5rem;
+		border-radius: 1rem;
 		background-color: var(--color-image-background);
 		box-shadow: var(--image-shadow);
 	}
 
-	@media (min-width: 1024px) {	
+	@media (min-width: 1024px) {
 		.row {
 			grid-template-columns: 2fr 1fr;
 		}
