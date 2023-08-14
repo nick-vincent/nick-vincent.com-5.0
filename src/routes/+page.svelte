@@ -1,6 +1,6 @@
 <script>
 	import Image from '$lib/Image.svelte';
-	import Portrait from '../img/nick-vincent.jpg?format=webp&w=680&h=680&as=meta';
+	import Portrait from '../img/rock-out.jpg?format=webp&w=1600&as=meta';
 </script>
 
 <svelte:head>
@@ -11,45 +11,54 @@
 	/>
 </svelte:head>
 
-<h1 class="visually-hidden">Nick Vincent</h1>
-<div class="image">
-	<Image src={Portrait.src} alt="Portrait of Nick Vincent" aspect="1" radius="50%" />
+<div class="grid">
+	<div class="right">
+		<h1 class="">Nick</h1>
+		<p>is known for:</p>
+		<ul class="bullet">
+			<li><a href="/work/">pushing pixels</a></li>
+			<li><a href="/tunes/">strumming tunes</a></li>
+			<li><a href="/faces/">making faces</a></li>
+			<li><a href="/photos/">snapping photos</a></li>
+			<!-- <li><a href="/contact/">listening to laments</a></li> -->
+		</ul>
+	</div>
+	<div class="left">
+		<div class="image">
+			<Image
+				src={Portrait.src}
+				alt="Nick Vincent recording guitar tracks."
+				aspect=".8"
+				radius="1.5rem"
+			/>
+		</div>
+	</div>
 </div>
-
-<!--
-	<p>is known to</p>
-	<ul>
-		<li><a href="/work/">push pixels</a></li>
-		<li><a href="/tunes/">strum tunes</a></li>
-		<li><a href="/faces/">make faces</a></li>
-		<li><a href="/photos/">snap photos</a></li>
-	</ul>
-	<p>
-		Feel free to <br />
-		<a href="/contact/">drop him a line</a>
-	</p> 
--->
 
 <style>
 	.image {
-		width: 14rem;
-		margin: auto;
-		border-radius: 50%;
+		width: 100%;
+		border-radius: 1.5rem;
 		box-shadow: var(--image-shadow);
 	}
-	/* 
-	ul {
-		display: flex;
-		justify-content: center;
-		gap: 1rem;
-		padding: 0;
-		margin: 0;
-		font-size: 0.75rem;
-		font-weight: 500;
-		list-style: none;
+
+	.grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 1.5rem;
 	}
-	li {
-		padding: 0;
-		margin: 0;
-	} */
+
+	.left {
+		order: 1;
+	}
+
+	.right {
+		order: 2;
+	}
+
+	@media (min-width: 860px) {
+		.grid {
+			grid-template-columns: 2fr 1fr;
+		}
+	}
 </style>
