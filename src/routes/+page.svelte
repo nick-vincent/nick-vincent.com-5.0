@@ -1,6 +1,6 @@
 <script>
 	import Image from '$lib/Image.svelte';
-	import Portrait from '../img/rock-out.jpg?format=webp&w=1600&as=meta';
+	import Portrait from '../img/rock-out.jpg?format=webp&w=2400&as=meta';
 </script>
 
 <svelte:head>
