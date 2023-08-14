@@ -1,5 +1,6 @@
 <script>
 	import Header from './header.svelte';
+	import Footer from './footer.svelte';
 	import PageTransition from '$lib/PageTransition.svelte';
 	import '../app.css';
 
@@ -28,10 +29,4 @@
 	</PageTransition>
 </main>
 
-<footer>
-	<p>
-		Made with ❤️ with <a href="https://svelte.dev" rel="external noreferrer" target="_blank"
-			>Svelte</a
-		>
-	</p>
-</footer>
+<Footer />
