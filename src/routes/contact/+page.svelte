@@ -1,4 +1,5 @@
 <script>
+	import EmailLink from '$lib/ui/EmailLink.svelte';
 	import LinkedInLink from '$lib/ui/LinkedInLink.svelte';
 	import InstagramLink from '$lib/ui/InstagramLink.svelte';
 </script>
@@ -14,7 +15,7 @@
 </div>
 
 <ul class="inline">
-	<li><a href="mailto:the.nick.vincent@gmail.com">Email</a></li>
+	<li><EmailLink url="mailto:the.nick.vincent@gmail.com/" /></li>
 	<li><LinkedInLink url="https://www.linkedin.com/in/nickvincent/" /></li>
 	<li><InstagramLink url="https://www.instagram.com/the.nick.vincent/" /></li>
 </ul>
