@@ -5,12 +5,12 @@
 
 	const { title, url, thumb } = image;
 
-	let card;
+	let link;
 	let mouseX = 0;
 	let mouseY = 0;
 
-	$: rotateY = mouseX ? `${(mouseX / card.clientWidth) * 2 * 10}deg` : '0deg';
-	$: rotateX = mouseY ? `${(mouseY / card.clientHeight) * 2 * 10}deg` : '0deg';
+	$: rotateY = mouseX ? `${(mouseX / link.clientWidth) * 10}deg` : '0deg';
+	$: rotateX = mouseY ? `${(mouseY / link.clientHeight) * 10}deg` : '0deg';
 
 	function onMouseMove(e) {
 		mouseX = e.offsetX - e.target.clientWidth / 2;
@@ -23,7 +23,7 @@
 	}
 </script>
 
-<a href={url} bind:this={card} on:mousemove={(e) => onMouseMove(e)} on:mouseleave={onMouseLeave}>
+<a href={url} bind:this={link} on:mousemove={(e) => onMouseMove(e)} on:mouseleave={onMouseLeave}>
 	<span
 		class="card"
 		style:--mouseX={mouseX}
@@ -88,7 +88,7 @@
 	}
 
 	a:focus .card {
-		--scale: 1.075;
+		--scale: 1.05;
 		z-index: 2;
 		box-shadow: var(--image-shadow-focus);
 		transition:
@@ -106,7 +106,7 @@
 
 	@media (hover: hover) {
 		a:hover .card {
-			--scale: 1.075;
+			--scale: 1.05;
 			z-index: 2;
 			box-shadow: var(--image-shadow-focus);
 			transition:
