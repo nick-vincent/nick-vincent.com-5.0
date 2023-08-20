@@ -176,7 +176,7 @@
 *,
 *::after,
 *::before {
-	-webkit-tap-highlight-color: var(--color-focus-highlight);
+	-webkit-tap-highlight-color: transparent;
 }
 
 html {

@@ -1,15 +1,12 @@
 <script>
-	import { scale } from 'svelte/transition';
-	import { expoInOut } from 'svelte/easing';
-
 	import Thumbnail from '$lib/gallery/Thumbnail.svelte';
 
 	export let images = [];
 </script>
 
 <ul>
-	{#each images as image, i}
-		<li in:scale|global={{ duration: 500, delay: i * 50 + 250, start: 0.5, easing: expoInOut }}>
+	{#each images as image}
+		<li>
 			<Thumbnail {image} />
 		</li>
 	{/each}
