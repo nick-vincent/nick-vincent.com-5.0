@@ -13,11 +13,12 @@
 	const feedUrl = `/${dir}/feed`;
 	const instagramUrl = `https://instagram.com/p/${id}`;
 	const showUI = Boolean(id || prevImage || nextImage || backUrl);
+	const useHangingPunctuation = dir === 'faces';
 </script>
 
 {#if title}<h2>{title}</h2>{/if}
 {#if date}<p class="date">{date}</p>{/if}
-{#if caption}<p class="caption">{caption}</p>{/if}
+{#if caption}<p class="caption" class:useHangingPunctuation>{caption}</p>{/if}
 {#if showUI}
 	<ul class="inline">
 		<!-- {#if feedUrl}
@@ -47,5 +48,9 @@
 		letter-spacing: 0.25em;
 		font-size: 0.75rem;
 		font-weight: 500;
+	}
+
+	.useHangingPunctuation {
+		text-indent: calc(-1rem * 10 / 24);
 	}
 </style>
