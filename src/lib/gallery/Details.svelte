@@ -1,13 +1,14 @@
 <script>
 	import FeedLink from '$lib/ui/FeedLink.svelte';
 	import InstagramLink from '$lib/ui/InstagramLink.svelte';
+	import BuyPrintLink from '$lib/ui/BuyPrintLink.svelte';
 
 	export let image;
 	export let prevImage;
 	export let nextImage;
 	export let dir;
 
-	const { title, date, caption, id } = image;
+	const { title, date, caption, id, buy } = image;
 	const backUrl = `/${dir}/`;
 	const feedUrl = `/${dir}/feed`;
 	const instagramUrl = `https://instagram.com/p/${id}`;
@@ -22,6 +23,9 @@
 		<!-- {#if feedUrl}
 			<li><FeedLink url={feedUrl} /></li>
 		{/if} -->
+		{#if buy}
+			<li><BuyPrintLink url={buy} text="Purchase a print" /></li>
+		{/if}
 		{#if id}
 			<li><InstagramLink url={instagramUrl} text="View on Instagram" /></li>
 		{/if}

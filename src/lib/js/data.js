@@ -60,6 +60,7 @@ export const getImageData = function (
 		const path = `../../img/${dir}/${slug}.${extension}`;
 		const title = titleTemplate(image.title);
 		const caption = captionTemplate(image.caption);
+		const buy = image.buy;
 
 		const imageData = imageFiles[path];
 		const { src, aspect } = imageData;
@@ -70,7 +71,7 @@ export const getImageData = function (
 		// const feedData = feedFiles[path];
 		// images[i] = { ...image, title, caption, slug, url, date, thumbData, imageData, feedData };
 
-		images[i] = { id, title, caption, slug, url, date, thumb, src, aspect };
+		images[i] = { id, title, caption, slug, url, date, thumb, src, aspect, buy };
 	}
 	return images;
 };
