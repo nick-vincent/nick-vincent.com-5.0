@@ -90,9 +90,6 @@
 		border-left-color: transparent;
 		transform: rotate(-45deg);
 	}
-	.arrow.top {
-		transform: rotate(-225deg);
-	}
 
 	a:focus .popover {
 		opacity: 1;
