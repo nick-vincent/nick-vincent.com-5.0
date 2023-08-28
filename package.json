@@ -11,6 +11,7 @@
 		"postbuild": "npx svelte-sitemap --domain https://nick-vincent.com --trailing-slashes"
 	},
 	"devDependencies": {
+		"@floating-ui/dom": "^1.5.1",
 		"@sveltejs/adapter-static": "^2.0.3",
 		"@sveltejs/kit": "^1.20.4",
 		"dayjs": "^1.11.8",
