@@ -17,7 +17,7 @@ s-2.3,5.1-5.1,5.1s-5.1-2.3-5.1-5.1S11.2,6,14,6z M3.4,26c1.4-4.6,5.7-7.8,10.6-7.8
 <style>
 	svg {
 		display: block;
-		width: 1.5rem;
+		width: 2rem;
 	}
 	path {
 		fill: var(--color-link);

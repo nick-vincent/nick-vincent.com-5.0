@@ -16,7 +16,7 @@
 <style>
 	svg {
 		display: block;
-		width: 1.5rem;
+		width: 2rem;
 	}
 	path {
 		fill: var(--color-link);
