@@ -3,6 +3,7 @@
 	import EmailLink from '$lib/ui/EmailLink.svelte';
 	import LinkedInLink from '$lib/ui/LinkedInLink.svelte';
 	import InstagramLink from '$lib/ui/InstagramLink.svelte';
+	import YouTubeLink from '$lib/ui/YouTubeLink.svelte';
 	import PhoneBooth from '../../img/contact.jpg?format=webp&w=1600&as=meta';
 </script>
 
@@ -15,10 +16,11 @@
 	<div class="right">
 		<h1>Contact</h1>
 		<p>Connect or drop me a line.</p>
-		<ul class="inline">
+		<ul class="icons">
 			<li><EmailLink url="mailto:the.nick.vincent@gmail.com" /></li>
 			<li><LinkedInLink url="https://www.linkedin.com/in/nickvincent/" /></li>
 			<li><InstagramLink url="https://www.instagram.com/the.nick.vincent/" /></li>
+			<li><YouTubeLink url="https://www.youtube.com/@nick-vincent" /></li>
 		</ul>
 	</div>
 	<div class="left">
@@ -51,6 +53,12 @@
 
 	p {
 		margin-top: 0.5rem;
+		margin-bottom: 2rem;
+	}
+
+	ul.icons {
+		display: flex;
+		gap: 1rem;
 	}
 
 	@media (min-width: 860px) {
