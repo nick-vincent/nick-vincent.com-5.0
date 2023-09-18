@@ -13,8 +13,8 @@
 	--light-color-line: rgba(0, 0, 0, 0.1);
 	--light-color-bullet: rgba(0, 0, 0, 0.2);
 	--light-color-arrow: rgba(0, 0, 0, 0.2);
-	--light-color-tooltip-text: rgba(255, 255, 255, 0.9);
-	--light-color-tooltip-background: rgba(0, 0, 0, 0.9);
+	--light-color-tooltip-text: rgba(204, 204, 204, 0.9);
+	--light-color-tooltip-background: rgba(34, 34, 34, 0.9);
 	--light-color-focus-highlight: rgba(60, 120, 180, 0.15);
 	--light-color-resume-text: #333;
 	--light-color-resume-background: rgba(255, 255, 255, 0.5);
@@ -40,8 +40,8 @@
 	--dark-color-line: rgba(255, 255, 255, 0.1);
 	--dark-color-bullet: rgba(255, 255, 255, 0.25);
 	--dark-color-arrow: rgba(255, 255, 255, 0.15);
-	--dark-color-tooltip-text: rgba(0, 0, 0, 0.9);
-	--dark-color-tooltip-background: rgba(255, 255, 255, 0.9);
+	--dark-color-tooltip-text: rgba(34, 34, 34, 0.9);
+	--dark-color-tooltip-background: rgba(221, 221, 221, 0.9);
 	--dark-color-focus-highlight: rgba(94, 167, 255, 0.1);
 	--dark-color-resume-text: #ccc;
 	--dark-color-resume-background: rgba(255, 255, 255, 0.05);
