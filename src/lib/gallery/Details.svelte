@@ -12,15 +12,30 @@
 	const backUrl = `/${dir}/`;
 	const feedUrl = `/${dir}/feed`;
 	const instagramUrl = `https://instagram.com/p/${id}`;
-	const showUI = Boolean(id || prevImage || nextImage || backUrl);
+	const showUI = Boolean(prevImage || nextImage || dir);
+	const showIcons = Boolean(buy || id);
 	const useHangingPunctuation = dir === 'faces';
 </script>
+
+{#if showUI}
+	<ul class="inline">
+		{#if prevImage}
+			<li><a href={prevImage.url} aria-label="View the previous image">Prev</a></li>
+		{/if}
+		{#if nextImage}
+			<li><a href={nextImage.url} aria-label="View the next image">Next</a></li>
+		{/if}
+		{#if backUrl}
+			<li><a href={backUrl} aria-label="View the image gallery">All</a></li>
+		{/if}
+	</ul>
+{/if}
 
 {#if title}<h2>{title}</h2>{/if}
 {#if date}<p class="date">{date}</p>{/if}
 {#if caption}<p class="caption" class:useHangingPunctuation>{caption}</p>{/if}
-{#if showUI}
-	<ul class="inline">
+{#if showIcons}
+	<ul class="icons">
 		<!-- {#if feedUrl}
 			<li><FeedLink url={feedUrl} /></li>
 		{/if} -->
@@ -29,15 +44,6 @@
 		{/if}
 		{#if id}
 			<li><InstagramLink url={instagramUrl} text="View on Instagram" /></li>
-		{/if}
-		{#if prevImage}
-			<li><a href={prevImage.url}>Prev</a></li>
-		{/if}
-		{#if nextImage}
-			<li><a href={nextImage.url}>Next</a></li>
-		{/if}
-		{#if backUrl}
-			<li><a href={backUrl}>See all</a></li>
 		{/if}
 	</ul>
 {/if}
@@ -48,6 +54,15 @@
 		letter-spacing: 0.25em;
 		font-size: 0.75rem;
 		font-weight: 500;
+	}
+
+	.inline {
+		margin-top: 0;
+	}
+
+	ul.icons {
+		display: flex;
+		gap: 1rem;
 	}
 
 	.useHangingPunctuation {
