@@ -201,6 +201,16 @@
 			</div>
 		</section>
 	</main>
+
+	<footer>
+		<h2>Etcetera</h2>
+		I made
+		<a
+			href="https://chrome.google.com/webstore/detail/dom-x-ray/olfkgegmjhgehnakignkabhbdchkhnkj"
+			rel="external noreferrer"
+			target="_blank">DOM X-Ray</a
+		>, a developer tool to see through the DOM, used by 1,000+ people and counting.
+	</footer>
 </article>
 
 <style>
@@ -241,6 +251,10 @@
 	header {
 		display: grid;
 		gap: 0.25em;
+	}
+
+	footer h2 {
+		margin-bottom: 2em;
 	}
 
 	#expertise h2 {
