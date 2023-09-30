@@ -209,7 +209,7 @@
 			href="https://chrome.google.com/webstore/detail/dom-x-ray/olfkgegmjhgehnakignkabhbdchkhnkj"
 			rel="external noreferrer"
 			target="_blank">DOM X-Ray</a
-		>, a developer tool to see through the DOM, used by 1,000+ people and counting.
+		>, a developer tool to see through the DOM with 1,000+ users and counting.
 	</footer>
 </article>
 
