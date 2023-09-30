@@ -13,7 +13,7 @@
 	const feedUrl = `/${dir}/feed`;
 	const instagramUrl = `https://instagram.com/p/${id}`;
 	const showUI = Boolean(prevImage || nextImage || dir);
-	const showIcons = Boolean(buy || id);
+	const showIcons = Boolean(buy || id || dir);
 	const useHangingPunctuation = dir === 'faces';
 </script>
 
@@ -36,9 +36,9 @@
 {#if caption}<p class="caption" class:useHangingPunctuation>{caption}</p>{/if}
 {#if showIcons}
 	<ul class="icons">
-		<!-- {#if feedUrl}
-			<li><FeedLink url={feedUrl} /></li>
-		{/if} -->
+		{#if feedUrl}
+			<li><FeedLink url={feedUrl} text="Subscribe to RSS feed" /></li>
+		{/if}
 		{#if buy}
 			<li><BuyPrintLink url={buy} text="Purchase a print" /></li>
 		{/if}

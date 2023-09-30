@@ -16,10 +16,6 @@ function loadFiles(dir) {
 				eager: true,
 				query: { format: 'webp', w: 2400, h: 1800, quality: 100, fit: 'inside', as: 'meta' }
 			});
-			// feedFiles = import.meta.glob('../../img/photos/*.jpg', {
-			// 	eager: true,
-			// 	as: 'format=png&w=120;960&quality=60&as=meta'
-			// });
 			break;
 		case 'faces':
 			thumbFiles = import.meta.glob('../../img/faces/*.png', {
@@ -30,10 +26,6 @@ function loadFiles(dir) {
 				eager: true,
 				query: { format: 'webp', w: 2400, h: 1800, quality: 100, fit: 'inside', as: 'meta' }
 			});
-			// feedFiles = import.meta.glob('../../img/faces/*.png', {
-			// 	eager: true,
-			// 	as: 'format=png&w=120;960&quality=60&as=meta'
-			// });
 			break;
 	}
 
@@ -67,9 +59,6 @@ export const getImageData = function (
 
 		const thumbData = thumbFiles[path];
 		const thumb = thumbData.src;
-
-		// const feedData = feedFiles[path];
-		// images[i] = { ...image, title, caption, slug, url, date, thumbData, imageData, feedData };
 
 		images[i] = { id, title, caption, slug, url, date, thumb, src, aspect, buy };
 	}

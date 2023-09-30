@@ -6,6 +6,8 @@
 	export let text;
 	export let rel;
 	export let target;
+	// export let reload = false;
+	// data-sveltekit-reload
 
 	let anchor;
 	let popover;
