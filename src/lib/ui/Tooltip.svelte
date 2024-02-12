@@ -1,13 +1,11 @@
 <script>
-	import { onMount, onDestroy } from 'svelte';
+	import { onMount } from 'svelte';
 	import { autoUpdate, computePosition, flip, shift, offset, arrow } from '@floating-ui/dom';
 
 	export let url;
 	export let text;
 	export let rel;
 	export let target;
-	// export let reload = false;
-	// data-sveltekit-reload
 
 	let anchor;
 	let popover;
